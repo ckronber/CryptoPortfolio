@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class User
+    public class CryptoUser
     {
         [Key]
         public int UserId { get; set; }

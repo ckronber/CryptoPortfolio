@@ -51,7 +51,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CryptoInfo\CryptoInfoCreate.cs" />
+    <Compile Include="CryptoInfo\CryptoInfoDetails.cs" />
+    <Compile Include="CryptoInfo\CryptoInfoEdit.cs" />
+    <Compile Include="CryptoInfo\CryptoInfoList.cs" />
+    <Compile Include="CryptoPortfolio\CryptoPortfolioDetails.cs" />
+    <Compile Include="CryptoPortfolio\CryptoPortfolioEdit.cs" />
+    <Compile Include="CryptoPortfolio\CryptoPortfolioList.cs" />
+    <Compile Include="CryptoPortfolio\CryptoPortfoliooCreate.cs" />
+    <Compile Include="CryptoPurchase\CryptoPurchaseCreate.cs" />
+    <Compile Include="CryptoPurchase\CryptoPurchaseDetails.cs" />
+    <Compile Include="CryptoPurchase\CryptoPurchaseEdit.cs" />
+    <Compile Include="CryptoPurchase\CryptoPurchaseList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\UserAdd.cs" />
+    <Compile Include="User\UserDetails.cs" />
+    <Compile Include="User\UserEdit.cs" />
+    <Compile Include="User\UserList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -63,12 +79,7 @@
       <Name>CryptoPortfolio.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CryptoInfo\" />
-    <Folder Include="CryptoPortfolio\" />
-    <Folder Include="CryptoPurchase\" />
-    <Folder Include="User\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

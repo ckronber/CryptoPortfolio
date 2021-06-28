@@ -1,10 +1,11 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Data;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace CryptoPortfolio.Models
+namespace CryptoPortfolio.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -18,12 +19,18 @@ namespace CryptoPortfolio.Models
         }
     }
 
+
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<CryptoInfo> CryptoInfos { get; set; }
+        public DbSet<Portfolio> Portfolios { get; set; }
+        public DbSet<CryptoPurchase> Purchases { get; set; }
+        public DbSet<CryptoUser> CryptoUsers { get; set; }
 
         public static ApplicationDbContext Create()
         {

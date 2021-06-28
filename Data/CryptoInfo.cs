@@ -22,6 +22,5 @@ namespace Data
         // To be added later. This is a stretch goal
         //public int ExchangeId { get; set; }
         //public Exchange Exchange { get; set; }
-
     }
 }
