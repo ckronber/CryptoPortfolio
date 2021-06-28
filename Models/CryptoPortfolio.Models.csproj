@@ -63,6 +63,12 @@
       <Name>CryptoPortfolio.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CryptoInfo\" />
+    <Folder Include="CryptoPortfolio\" />
+    <Folder Include="CryptoPurchase\" />
+    <Folder Include="User\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
