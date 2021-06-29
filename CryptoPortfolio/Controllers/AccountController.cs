@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CryptoPortfolio.Models;
+using CryptoPortfolio.Data;
 
 namespace CryptoPortfolio.Controllers
 {
