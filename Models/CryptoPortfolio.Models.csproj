@@ -58,7 +58,7 @@
     <Compile Include="CryptoPortfolio\CryptoPortfolioDetails.cs" />
     <Compile Include="CryptoPortfolio\CryptoPortfolioEdit.cs" />
     <Compile Include="CryptoPortfolio\CryptoPortfolioList.cs" />
-    <Compile Include="CryptoPortfolio\CryptoPortfoliooCreate.cs" />
+    <Compile Include="CryptoPortfolio\CryptoPortfolioCreate.cs" />
     <Compile Include="CryptoPurchase\CryptoPurchaseCreate.cs" />
     <Compile Include="CryptoPurchase\CryptoPurchaseDetails.cs" />
     <Compile Include="CryptoPurchase\CryptoPurchaseEdit.cs" />

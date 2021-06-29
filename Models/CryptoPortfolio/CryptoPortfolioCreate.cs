@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace CryptoPortfolio.Models
 {
-    public class CryptoPortfolioDetails
+    public class CryptoPortfolioCreate
     {
-        public int PortfolioId { get; set; }
         public string Name { get; set; }
         public CryptoUser User { get; set; }
         public List<string> TopCrypto { get; set; }

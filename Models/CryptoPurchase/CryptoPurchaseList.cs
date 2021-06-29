@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models.CryptoPurchase
+namespace CryptoPurchase.Models
 {
     public class CryptoPurchaseList
     {
