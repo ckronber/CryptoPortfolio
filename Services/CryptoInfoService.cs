@@ -73,7 +73,7 @@ namespace Services
             }
         }
 
-        public bool DeleteNote(int id)
+        public bool DeleteCryptoInfo(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {

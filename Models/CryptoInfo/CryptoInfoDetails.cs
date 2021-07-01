@@ -8,6 +8,7 @@ namespace Models
 {
     public class CryptoInfoDetails
     {
+        public int CryptoId { get; set; }
         public string Currency { get; set; }
         public string CryptoName { get; set; }
         public virtual decimal Price { get; set; }

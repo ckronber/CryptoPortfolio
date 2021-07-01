@@ -21,7 +21,7 @@ namespace Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<CryptoPortfolioList> GetNotes()
+        public IEnumerable<CryptoPortfolioList> GetPortfolio()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -50,7 +50,7 @@ namespace Services
             }
         }
 
-        public bool UpdateNote(CryptoPortfolioEdit model)
+        public bool UpdatePortfolio(CryptoPortfolioEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -64,7 +64,7 @@ namespace Services
             }
         }
 
-        public bool DeleteNote(int id)
+        public bool DeletePortfolio(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
