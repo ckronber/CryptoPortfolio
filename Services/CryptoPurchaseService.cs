@@ -1,6 +1,5 @@
 ﻿using CryptoPortfolio.Data;
-using CryptoPortfolio.Models;
-using Models.CryptoPortfolio;
+using Models;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,71 +7,81 @@ namespace Services
 {
     public class CryptoPurchaseService
     {
-        public bool CreatePortfolio(CryptoPortfolioCreate model)
+        public bool CreatePurchase(CryptoPurchaseCreate model)
         {
             var entity = new CryptoPurchase()
             {
                 Name = model.Name,
-                BullBear = model.BullBear
+                PurchaseAmount = model.PurchaseAmount,
+                PurchaseDate = model.PurchaseDate,
+                PurchasePrice = model.PurchasePrice
             };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Portfolios.Add(entity);
+                ctx.Purchases.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<CryptoPortfolioList> GetNotes()
+
+        public IEnumerable<CryptoPurchaseList> GetPurchases()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Portfolios.Select(e => new CryptoPortfolioList
+                var query = ctx.Purchases.Select(e => new CryptoPurchaseList
                 {
-                    PortfolioId = e.PortfolioId,
+                    PurchaseId = e.PurchaseId,
                     Name = e.Name,
-                    BullBear = e.BullBear
+                    PurchaseAmount = e.PurchaseAmount,
+                    PurchaseDate = e.PurchaseDate,
+                    PurchasePrice = e.PurchasePrice
                 });
 
                 return query.ToArray();
             }
         }
 
-        public CryptoPortfolioDetails GetPortfolioById(int id)
+        public CryptoPurchaseDetails GetPurchaseById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Portfolios.Single(e => e.PortfolioId == id);
+                var query = ctx.Purchases.Single(e => e.PurchaseId == id);
 
                 return
-                    new CryptoPortfolioDetails
+                    new CryptoPurchaseDetails
                     {
-                        PortfolioId = query.PortfolioId,
-
+                        PurchaseId = query.PurchaseId,
+                        Name = query.Name,
+                        PurchaseDate = query.PurchaseDate,
+                        PurchaseAmount = query.PurchaseAmount,
+                        PurchasePrice = query.PurchasePrice,
+                        CryptoInfo = query.CryptoInfo,
                     };
             }
         }
 
-        public bool UpdateNote(CryptoPortfolioEdit model)
+        public bool UpdatePurchase(CryptoPurchaseEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Portfolios.Single(e => e.PortfolioId == model.PortfolioId);
+                var entity = ctx.Purchases.Single(e => e.PurchaseId == model.PurchaseId);
 
                 entity.Name = model.Name;
-                entity.BullBear = model.BullBear;
-                entity.TopCrypto = model.TopCrypto;
+                entity.PurchaseAmount = model.PurchaseAmount;
+                entity.PurchasePrice = model.PurchasePrice;
+                entity.PurchaseDate = model.PurchaseDate;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeleteNote(int id)
+        public bool DeletePurchase(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Portfolios.Single(e => e.PortfolioId == id);
+                var entity = ctx.Purchases.Single(e => e.PurchaseId == id);
 
-                ctx.Portfolios.Remove(entity);
+                ctx.Purchases.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CryptoInfo.Models
+namespace Models
 {
     public class CryptoInfoCreate
     {

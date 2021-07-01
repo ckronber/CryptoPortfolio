@@ -1,9 +1,7 @@
 ﻿using CryptoPortfolio.Data;
-using CryptoPortfolio.Models;
-using Data;
-using Models.CryptoPortfolio;
 using System.Collections.Generic;
 using System.Linq;
+using Models;
 
 namespace Services
 {

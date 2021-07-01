@@ -1,4 +1,4 @@
-﻿using CryptoInfo.Models;
+﻿using Models;
 using CryptoPortfolio.Data;
 using System.Collections.Generic;
 using System.Linq;
