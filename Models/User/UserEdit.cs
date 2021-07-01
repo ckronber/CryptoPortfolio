@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models.User
+namespace User.Models
 {
     public class UserEdit
     {
+        public int UserId { get; set; }
         public Guid LogId { get; set; }
         public string PreferredExchange { get; set; }
     }

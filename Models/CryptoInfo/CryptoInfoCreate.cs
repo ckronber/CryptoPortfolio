@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models.CryptoInfo
+namespace CryptoInfo.Models
 {
     public class CryptoInfoCreate
     {
+        public int PurchaseId { get; set; }
         public string Currency { get; set; }
         public string CryptoName { get; set; }
+        public decimal Price { get; set; }
         public decimal Amount { get; set; }
         public decimal TotalValue { get; set; }
     }

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace CryptoPortfolio.Data
 {
     public class CryptoInfo
     {
@@ -13,7 +14,8 @@ namespace Data
         public int CryptoId { get; set; }
         [Required]
         public string Currency { get; set; }
-        [Required]
+        [ForeignKey("CryptoPurchase")]
+        public int PurchaseId { get; set; }
         public string CryptoName { get; set; }
         public virtual decimal Price { get; set; }
         public decimal Amount { get; set; }

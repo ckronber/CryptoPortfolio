@@ -8,5 +8,10 @@ namespace CryptoPurchase.Models
 {
     public class CryptoPurchaseList
     {
+        public int PurchaseId { get; set; }
+        public string Name { get; set; }
+        public decimal PurchasePrice { get; set; }
+        public decimal PurchaseAmount { get; set; }
+        public DateTimeOffset PurchaseDate { get; set; }
     }
 }
