@@ -19,8 +19,8 @@ namespace Services
         {
             var entity = new CryptoUser()
             {
-                LogId = _userId
-
+                LogId = _userId,
+                PreferredExchange = model.PreferredExchange
             };
 
             using (var ctx = new ApplicationDbContext())

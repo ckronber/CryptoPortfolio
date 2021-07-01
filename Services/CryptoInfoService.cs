@@ -17,7 +17,6 @@ namespace Services
                 PurchaseId = model.PurchaseId,
                 Amount = model.Amount,
                 TotalValue = model.TotalValue
-
             };
 
             using (var ctx = new ApplicationDbContext())

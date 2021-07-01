@@ -46,7 +46,6 @@ namespace Services
                     new CryptoPortfolioDetails
                     {
                         PortfolioId = query.PortfolioId,
-                        
                     };
             }
         }
