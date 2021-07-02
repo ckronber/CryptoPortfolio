@@ -1,0 +1,66 @@
+﻿@model Models.CryptoInfoDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CryptoInfoDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CryptoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CryptoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CryptoName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CryptoName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalValue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CryptoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

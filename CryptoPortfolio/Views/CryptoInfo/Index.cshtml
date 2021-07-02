@@ -1,7 +1,51 @@
-﻿
+﻿@model IEnumerable<Models.CryptoInfoList>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CryptoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Currency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CryptoName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CryptoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Currency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CryptoName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CryptoId}) |
+            @Html.ActionLink("Details", "Details", new {  id=item.CryptoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CryptoId})
+        </td>
+    </tr>
+}
+
+</table>

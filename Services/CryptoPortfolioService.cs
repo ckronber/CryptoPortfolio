@@ -46,6 +46,8 @@ namespace Services
                     new CryptoPortfolioDetails
                     {
                         PortfolioId = query.PortfolioId,
+                        Name = query.Name,
+                        BullBear = query.BullBear
                     };
             }
         }

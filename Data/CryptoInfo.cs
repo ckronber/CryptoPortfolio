@@ -14,7 +14,6 @@ namespace CryptoPortfolio.Data
         public int CryptoId { get; set; }
         [Required]
         public string Currency { get; set; }
-        [ForeignKey("CryptoPurchase")]
         public int PurchaseId { get; set; }
         public string CryptoName { get; set; }
         public virtual decimal Price { get; set; }
