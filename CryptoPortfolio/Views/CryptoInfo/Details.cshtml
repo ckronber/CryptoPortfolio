@@ -1,4 +1,4 @@
-﻿@model Models.CryptoInfoDetails
+﻿@model CryptoPortfolio.Models.CryptoInfoDetails
 
 @{
     ViewBag.Title = "Details";
@@ -61,6 +61,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CryptoId }) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.CryptoId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

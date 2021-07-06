@@ -1,15 +1,17 @@
-﻿using Models;
-using Services;
+﻿using CryptoPortfolio.Models;
+using CryptoPortfolio.Services;
 using System.Web.Mvc;
 
 namespace CryptoPortfolio.Controllers
 {
+    [Authorize]
     public class CryptoPortfolioController : Controller
     {
         // GET: CryptoPortfolio
         public ActionResult Index()
         {
-            return View();
+            var model = CreateCryptoPortfolio().GetPortfolio();
+            return View(model);
         }
 
         // GET: Create

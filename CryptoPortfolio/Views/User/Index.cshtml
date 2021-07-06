@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Models.UserList>
+﻿@model IEnumerable<CryptoPortfolio.Models.UserList>
 
 @{
     ViewBag.Title = "Index";
@@ -9,6 +9,17 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -23,23 +34,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LogId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PreferredExchange)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserId}) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId})
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LogId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreferredExchange)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -1,5 +1,5 @@
-﻿using Models;
-using Services;
+﻿using CryptoPortfolio.Models;
+using CryptoPortfolio.Services;
 using System.Web.Mvc;
 
 namespace CryptoPortfolio.Controllers
@@ -9,7 +9,8 @@ namespace CryptoPortfolio.Controllers
         // GET: CryptoInfo
         public ActionResult Index()
         {
-            return View();
+            var model = CreateCryptoInfo().GetCryptoInfo();
+            return View(model);
         }
 
         // GET: Create

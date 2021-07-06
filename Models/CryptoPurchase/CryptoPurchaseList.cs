@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models
-{
+namespace CryptoPortfolio.Models
+{ 
+
     public class CryptoPurchaseList
     {
         public int PurchaseId { get; set; }

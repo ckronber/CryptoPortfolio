@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Models;
+using CryptoPortfolio.Models;
 
-namespace Services
+namespace CryptoPortfolio.Services
 {
     public class UserService
     {
@@ -30,7 +30,7 @@ namespace Services
             }
         }
 
-        public IEnumerable<UserList> GetNotes()
+        public IEnumerable<UserList> GetUsers()
         {
             using (var ctx = new ApplicationDbContext())
             {

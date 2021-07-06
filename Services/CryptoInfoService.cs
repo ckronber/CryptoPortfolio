@@ -1,9 +1,12 @@
-﻿using Models;
+﻿using CryptoPortfolio.Models;
 using CryptoPortfolio.Data;
 using System.Collections.Generic;
 using System.Linq;
+using RestSharp;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
-namespace Services
+namespace CryptoPortfolio.Services
 {
     public class CryptoInfoService
     {
@@ -13,10 +16,8 @@ namespace Services
             {
                 CryptoName = model.CryptoName,
                 Currency = model.Currency,
-                Price = model.Price,
                 PurchaseId = model.PurchaseId,
                 Amount = model.Amount,
-                TotalValue = model.TotalValue
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -31,12 +32,12 @@ namespace Services
             {
                 var query = ctx.CryptoInfos.Select(e => new CryptoInfoList
                 {
+                    CryptoId = e.CryptoId,
                     CryptoName = e.CryptoName,
-                    Price = e.Price,
-                    Currency = e.Currency
+                    Currency = e.Currency,
                 });
 
-                return query.ToArray();
+                return query.ToList();
             }
         }
 
@@ -52,8 +53,6 @@ namespace Services
                         CryptoName = query.CryptoName,
                         Amount = query.Amount,
                         Currency = query.Currency,
-                        Price = query.Price,
-                        TotalValue  = query.TotalValue
                     };
             }
         }
@@ -83,5 +82,7 @@ namespace Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
     }
+    
 }

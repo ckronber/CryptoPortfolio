@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
-using Models;
-using Services;
+using CryptoPortfolio.Models;
+using CryptoPortfolio.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,12 +9,14 @@ using System.Web.Mvc;
 
 namespace CryptoPortfolio.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         // GET: User
         public ActionResult Index()
         {
-            return View();
+            var model = CreateUser().GetUsers();
+            return View(model);
         }
 
         // GET: Create

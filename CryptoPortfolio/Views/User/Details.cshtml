@@ -1,4 +1,4 @@
-﻿@model Models.UserDetails
+﻿@model CryptoPortfolio.Models.UserDetails
 
 @{
     ViewBag.Title = "Details";
@@ -37,6 +37,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {id = Model.UserId}) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
