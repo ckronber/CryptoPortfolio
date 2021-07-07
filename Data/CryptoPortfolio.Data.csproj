@@ -114,6 +114,14 @@
     <Compile Include="Migrations\202107060632277_FifthMigration.designer.cs">
       <DependentUpon>202107060632277_FifthMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107061722595_SixthMigration.cs" />
+    <Compile Include="Migrations\202107061722595_SixthMigration.designer.cs">
+      <DependentUpon>202107061722595_SixthMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107061849437_SeventhMigration.cs" />
+    <Compile Include="Migrations\202107061849437_SeventhMigration.designer.cs">
+      <DependentUpon>202107061849437_SeventhMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Portfolio.cs" />
     <Compile Include="CryptoPurchase.cs" />
@@ -143,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107060632277_FifthMigration.resx">
       <DependentUpon>202107060632277_FifthMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061722595_SixthMigration.resx">
+      <DependentUpon>202107061722595_SixthMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107061849437_SeventhMigration.resx">
+      <DependentUpon>202107061849437_SeventhMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

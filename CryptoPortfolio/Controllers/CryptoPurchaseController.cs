@@ -32,7 +32,7 @@ namespace CryptoPortfolio.Controllers
 
             if (service.CreatePurchase(model))
             {
-                TempData["SaveResult"] = "";
+                TempData["SaveResult"] = "Crypto Purchase Created";
                 return RedirectToAction("Index");
             }
 

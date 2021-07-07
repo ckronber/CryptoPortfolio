@@ -26,6 +26,7 @@ namespace CryptoPortfolio.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public IEnumerable<CryptoInfoList> GetCryptoInfo()
         {
             using (var ctx = new ApplicationDbContext())
@@ -35,6 +36,8 @@ namespace CryptoPortfolio.Services
                     CryptoId = e.CryptoId,
                     CryptoName = e.CryptoName,
                     Currency = e.Currency,
+                    Amount = e.Amount,
+                    TotalValue = e.TotalValue
                 });
 
                 return query.ToList();
@@ -50,6 +53,7 @@ namespace CryptoPortfolio.Services
                 return
                     new CryptoInfoDetails
                     {
+                        CryptoId = query.CryptoId,
                         CryptoName = query.CryptoName,
                         Amount = query.Amount,
                         Currency = query.Currency,

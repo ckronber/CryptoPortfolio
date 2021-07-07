@@ -70,7 +70,7 @@ namespace CryptoPortfolio.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Portfolios.Single(e =>  e.PortfolioId == id);
+                var entity = ctx.Portfolios.Single(e => e.PortfolioId == id);
 
                 ctx.Portfolios.Remove(entity);
                 return ctx.SaveChanges() == 1;

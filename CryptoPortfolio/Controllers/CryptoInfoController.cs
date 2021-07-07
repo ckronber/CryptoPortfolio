@@ -31,7 +31,7 @@ namespace CryptoPortfolio.Controllers
 
             if (service.CreateCryptoInfo(model))
             {
-                TempData["SaveResult"] = "";
+                TempData["SaveResult"] = "Crypto Info Created";
                 return RedirectToAction("Index");
             }
 

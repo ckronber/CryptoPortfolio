@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>User Information</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -47,9 +47,9 @@
                 @Html.DisplayFor(modelItem => item.PreferredExchange)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.UserId})
             </td>
         </tr>
     }

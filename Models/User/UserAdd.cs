@@ -8,7 +8,7 @@ namespace CryptoPortfolio.Models
 {
     public class UserAdd
     {
-        //public Guid LogId { get; set; }
+        public Guid LogId { get; set; }
         public string PreferredExchange { get; set; }
     }
 }

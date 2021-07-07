@@ -34,9 +34,10 @@ namespace CryptoPortfolio.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.CryptoUsers.Where(e => e.LogId == _userId).Select(e => new UserList
+                var query = ctx.CryptoUsers.Select(e => new UserList
                 {
                     UserId = e.UserId,
+                    LogId = e.LogId,
                     PreferredExchange = e.PreferredExchange
                 });
 
@@ -52,8 +53,7 @@ namespace CryptoPortfolio.Services
 
                 return
                     new UserDetails
-                    {
-                        LogId = query.LogId,
+                    { 
                         UserId = query.UserId,
                         PreferredExchange = query.PreferredExchange
                     };
@@ -64,7 +64,7 @@ namespace CryptoPortfolio.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.CryptoUsers.Single(e => e.UserId == model.UserId && e.LogId == _userId);
+                var entity = ctx.CryptoUsers.Single(e => e.UserId == model.UserId);
 
                 entity.UserId = model.UserId;
                 entity.PreferredExchange = model.PreferredExchange;
@@ -77,7 +77,7 @@ namespace CryptoPortfolio.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.CryptoUsers.Single(e => e.LogId == _userId && e.UserId == id);
+                var entity = ctx.CryptoUsers.Single(e => e.UserId == id);
 
                 ctx.CryptoUsers.Remove(entity);
                 return ctx.SaveChanges() == 1;

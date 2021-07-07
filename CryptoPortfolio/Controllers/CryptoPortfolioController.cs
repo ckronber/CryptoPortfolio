@@ -10,7 +10,8 @@ namespace CryptoPortfolio.Controllers
         // GET: CryptoPortfolio
         public ActionResult Index()
         {
-            var model = CreateCryptoPortfolio().GetPortfolio();
+            var service = CreateCryptoPortfolio();
+            var model = service.GetPortfolio();
             return View(model);
         }
 
@@ -32,7 +33,7 @@ namespace CryptoPortfolio.Controllers
 
             if (service.CreatePortfolio(model))
             {
-                TempData["SaveResult"] = "";
+                TempData["SaveResult"] = "Crypto Protfolio Created";
                 return RedirectToAction("Index");
             }
 

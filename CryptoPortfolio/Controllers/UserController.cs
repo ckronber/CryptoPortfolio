@@ -15,7 +15,8 @@ namespace CryptoPortfolio.Controllers
         // GET: User
         public ActionResult Index()
         {
-            var model = CreateUser().GetUsers();
+            var service = CreateUser();
+            var model = service.GetUsers();
             return View(model);
         }
 
@@ -37,7 +38,7 @@ namespace CryptoPortfolio.Controllers
 
             if (service.CreateUser(model))
             {
-                TempData["SaveResult"] = "";
+                TempData["SaveResult"] = "User Has been Created";
                 return RedirectToAction("Index");
             }
 
@@ -63,7 +64,7 @@ namespace CryptoPortfolio.Controllers
                 new UserEdit()
                 {
                    UserId = detail.UserId,
-                   PreferredExchange = detail.PreferredExchange
+                   PreferredExchange = detail.PreferredExchange,
                 };
             return View(model);
         }
