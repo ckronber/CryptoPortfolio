@@ -11,19 +11,20 @@ namespace CryptoPortfolio.Data
         public int CryptoId { get; set; }
         [Required]
         public string Currency { get; set; }
-        public int? PurchaseId { get; set; }
         [Required]
         public string CryptoName { get; set; }
         [Required]
         public decimal Amount { get; set; }
         public decimal Price { get; set; }
         public decimal TotalValue { get; set; }
+        public int PurchaseId { get; set; }
+        public virtual CryptoPurchase CryptoPurchase { get; set; }
 
 
         // To be added later. This is a stretch goal
         //public int ExchangeId { get; set; }
         //public Exchange Exchange { get; set; }
-        
+
     }
 
     

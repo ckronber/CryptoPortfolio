@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 
@@ -12,8 +13,8 @@ namespace CryptoPortfolio.Data
         public decimal PurchasePrice { get; set; }
         public decimal PurchaseAmount { get; set; }
         public decimal Gain { get; set; }
-        public decimal TotalGain { get; set; }
+        public decimal GainPercent { get; set; }
         public DateTimeOffset PurchaseDate { get; set; }
-        public CryptoInfo CryptoInfo{ get; set; }
+        public virtual List<CryptoInfo> CryptoInfo{ get; set; }
     }
 }

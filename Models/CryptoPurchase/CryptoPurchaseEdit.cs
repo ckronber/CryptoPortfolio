@@ -14,6 +14,6 @@ namespace CryptoPortfolio.Models
         public decimal PurchasePrice { get; set; }
         public decimal PurchaseAmount { get; set; }
         public DateTimeOffset PurchaseDate { get; set; }
-        public CryptoInfo CryptoInfo { get; set; }
+        public virtual List<CryptoInfo> CryptoInfo { get; set; }
     }
 }

@@ -8,9 +8,10 @@ namespace CryptoPortfolio.Data
         [Key]
         public int PortfolioId { get; set; }
         public string Name { get; set; }
-        public CryptoUser User { get; set; }
         public List<string> TopCrypto { get; set; }
         public string BullBear { get; set; }
-        public List<CryptoPurchase> CryptoPurchase { get; set; }
+        public int CryptoId { get; set; }
+        public virtual CryptoUser CryptoUser { get; set; }
+        public virtual List<CryptoPurchase> CryptoPurchase { get; set; }
     }
 }
