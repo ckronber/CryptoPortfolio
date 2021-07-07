@@ -29,7 +29,8 @@ namespace CryptoPortfolio.Services
                 {
                     PortfolioId = e.PortfolioId,
                     Name = e.Name,
-                    BullBear = e.BullBear
+                    BullBear = e.BullBear,
+                    
                 });
 
                 return query.ToArray();

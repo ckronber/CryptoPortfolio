@@ -60,7 +60,8 @@ namespace CryptoPortfolio.Controllers
                 {
                     PortfolioId = detail.PortfolioId,
                     Name = detail.Name,
-                    BullBear = detail.BullBear
+                    BullBear = detail.BullBear,
+                    CryptoUser = detail.CryptoUser
                 };
             return View(model);
         }

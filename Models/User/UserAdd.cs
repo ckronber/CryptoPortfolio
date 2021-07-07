@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace CryptoPortfolio.Models
 {
     public class UserAdd
@@ -11,9 +11,11 @@ namespace CryptoPortfolio.Models
         public Guid LogId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
         public decimal TradeMoney { get; set; }
         public string Currency { get; set; }
         public string PreferredExchange { get; set; }
+        public int? PortfolioId { get; set; }
     }
 }

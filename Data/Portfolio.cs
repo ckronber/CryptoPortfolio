@@ -11,6 +11,7 @@ namespace CryptoPortfolio.Data
         public List<string> TopCrypto { get; set; }
         public string BullBear { get; set; }
         public int CryptoId { get; set; }
+        [Required]
         public virtual CryptoUser CryptoUser { get; set; }
         public virtual List<CryptoPurchase> CryptoPurchase { get; set; }
     }

@@ -20,7 +20,13 @@ namespace CryptoPortfolio.Services
             var entity = new CryptoUser()
             {
                 LogId = _userId,
-                PreferredExchange = model.PreferredExchange
+                PreferredExchange = model.PreferredExchange,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                TradeMoney = model.TradeMoney,
+                PortfolioId = model.PortfolioId,
+                Currency = model.Currency
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -37,8 +43,10 @@ namespace CryptoPortfolio.Services
                 var query = ctx.CryptoUsers.Select(e => new UserList
                 {
                     UserId = e.UserId,
-                    LogId = e.LogId,
-                    PreferredExchange = e.PreferredExchange
+                    Email = e.Email,
+                    Currency = e.Currency,
+                    TradeMoney = e.TradeMoney,
+                    PreferredExchange = e.PreferredExchange,
                 });
 
                 return query.ToArray();
@@ -53,9 +61,15 @@ namespace CryptoPortfolio.Services
 
                 return
                     new UserDetails
-                    { 
+                    {
                         UserId = query.UserId,
-                        PreferredExchange = query.PreferredExchange
+                        LogId = query.LogId,
+                        PreferredExchange = query.PreferredExchange,
+                        FirstName = query.FirstName,
+                        LastName = query.LastName,
+                        Email = query.Email,
+                        TradeMoney = query.TradeMoney,
+                        Currency = query.Currency
                     };
             }
         }
@@ -64,9 +78,13 @@ namespace CryptoPortfolio.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.CryptoUsers.Single(e => e.UserId == model.UserId);
+                var entity = ctx.CryptoUsers.Single(e => e.LogId == _userId && e.UserId == model.UserId);
 
                 entity.UserId = model.UserId;
+                entity.PreferredExchange = model.PreferredExchange;
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.TradeMoney = model.TradeMoney;
                 entity.PreferredExchange = model.PreferredExchange;
 
                 return ctx.SaveChanges() == 1;
@@ -77,7 +95,7 @@ namespace CryptoPortfolio.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.CryptoUsers.Single(e => e.UserId == id);
+                var entity = ctx.CryptoUsers.Single(e => e.LogId == _userId && e.UserId == id);
 
                 ctx.CryptoUsers.Remove(entity);
                 return ctx.SaveChanges() == 1;

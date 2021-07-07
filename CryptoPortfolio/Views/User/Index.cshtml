@@ -4,10 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<h2>User Information</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
+    
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -22,11 +23,18 @@
 
 <table class="table">
     <tr>
+       
         <th>
             @Html.DisplayNameFor(model => model.UserId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LogId)
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TradeMoney)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Currency)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PreferredExchange)
@@ -41,15 +49,21 @@
                 @Html.DisplayFor(modelItem => item.UserId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LogId)
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TradeMoney)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Currency)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PreferredExchange)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.UserId})
+                @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.UserId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
             </td>
         </tr>
     }

@@ -1,6 +1,7 @@
 ﻿using RestSharp;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace CryptoPortfolio.Models
 {
@@ -9,8 +10,10 @@ namespace CryptoPortfolio.Models
         public int CryptoId { get; set; }
         public string Currency { get; set; }
         public string CryptoName { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal Price => getCryptoPrice(CryptoName, Currency);
         public decimal Amount { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal TotalValue => Price * Amount;
 
         public virtual decimal getCryptoPrice(string cryptoTicker, string CurrencyTicker)

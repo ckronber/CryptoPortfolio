@@ -65,6 +65,12 @@ namespace CryptoPortfolio.Controllers
                 {
                    UserId = detail.UserId,
                    PreferredExchange = detail.PreferredExchange,
+                   Email = detail.Email,
+                   TradeMoney = detail.TradeMoney,
+                   Currency = detail.Currency,
+                   FirstName = detail.FirstName,
+                   LastName = detail.LastName,
+
                 };
             return View(model);
         }

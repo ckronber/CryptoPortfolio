@@ -7,13 +7,13 @@ namespace Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class cryptoUserChanged : IMigrationMetadata
+    public sealed partial class updatedUserModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(cryptoUserChanged));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedUserModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107071453525_cryptoUserChanged"; }
+            get { return "202107071958553_updatedUserModels"; }
         }
         
         string IMigrationMetadata.Source

@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class SeventhMigration : DbMigration
+    public partial class updatedUserModels : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.CryptoUser", "PortfolioId", c => c.Int());
+            AlterColumn("dbo.CryptoUser", "PortfolioId", c => c.Int());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.CryptoUser", "PortfolioId");
+            AlterColumn("dbo.CryptoUser", "PortfolioId", c => c.Int(nullable: false));
         }
     }
 }

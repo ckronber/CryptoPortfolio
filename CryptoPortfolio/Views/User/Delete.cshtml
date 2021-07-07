@@ -10,7 +10,6 @@
 <div>
     <h4>UserDetails</h4>
     <hr />
-
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.UserId)
@@ -29,6 +28,46 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TradeMoney)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TradeMoney)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.PreferredExchange)
         </dt>
 
@@ -38,8 +77,7 @@
 
     </dl>
 
-    @using (Html.BeginForm())
-    {
+    @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">

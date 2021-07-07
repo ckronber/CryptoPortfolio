@@ -13,35 +13,15 @@
                     {
                         CryptoId = c.Int(nullable: false, identity: true),
                         Currency = c.String(nullable: false),
-                        PurchaseId = c.Int(),
-                        CryptoName = c.String(),
-                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        CryptoName = c.String(nullable: false),
                         Amount = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        TotalValue = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        PurchaseId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.CryptoId);
-            
-            CreateTable(
-                "dbo.CryptoUser",
-                c => new
-                    {
-                        UserId = c.Int(nullable: false, identity: true),
-                        LogId = c.Guid(nullable: false),
-                        PreferredExchange = c.String(),
-                    })
-                .PrimaryKey(t => t.UserId);
-            
-            CreateTable(
-                "dbo.Portfolio",
-                c => new
-                    {
-                        PortfolioId = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        BullBear = c.String(),
-                        User_UserId = c.Int(),
-                    })
-                .PrimaryKey(t => t.PortfolioId)
-                .ForeignKey("dbo.CryptoUser", t => t.User_UserId)
-                .Index(t => t.User_UserId);
+                .PrimaryKey(t => t.CryptoId)
+                .ForeignKey("dbo.CryptoPurchase", t => t.PurchaseId, cascadeDelete: true)
+                .Index(t => t.PurchaseId);
             
             CreateTable(
                 "dbo.CryptoPurchase",
@@ -52,16 +32,43 @@
                         PurchasePrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         PurchaseAmount = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Gain = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        TotalGain = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        GainPercent = c.Decimal(nullable: false, precision: 18, scale: 2),
                         PurchaseDate = c.DateTimeOffset(nullable: false, precision: 7),
-                        CryptoInfo_CryptoId = c.Int(),
                         Portfolio_PortfolioId = c.Int(),
                     })
                 .PrimaryKey(t => t.PurchaseId)
-                .ForeignKey("dbo.CryptoInfo", t => t.CryptoInfo_CryptoId)
                 .ForeignKey("dbo.Portfolio", t => t.Portfolio_PortfolioId)
-                .Index(t => t.CryptoInfo_CryptoId)
                 .Index(t => t.Portfolio_PortfolioId);
+            
+            CreateTable(
+                "dbo.CryptoUser",
+                c => new
+                    {
+                        UserId = c.Int(nullable: false, identity: true),
+                        LogId = c.Guid(nullable: false),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        Email = c.String(),
+                        TradeMoney = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Currency = c.String(),
+                        PreferredExchange = c.String(),
+                        PortfolioId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.UserId);
+            
+            CreateTable(
+                "dbo.Portfolio",
+                c => new
+                    {
+                        PortfolioId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        BullBear = c.String(),
+                        CryptoId = c.Int(nullable: false),
+                        CryptoUser_UserId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.PortfolioId)
+                .ForeignKey("dbo.CryptoUser", t => t.CryptoUser_UserId, cascadeDelete: true)
+                .Index(t => t.CryptoUser_UserId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -141,24 +148,24 @@
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Portfolio", "User_UserId", "dbo.CryptoUser");
+            DropForeignKey("dbo.Portfolio", "CryptoUser_UserId", "dbo.CryptoUser");
             DropForeignKey("dbo.CryptoPurchase", "Portfolio_PortfolioId", "dbo.Portfolio");
-            DropForeignKey("dbo.CryptoPurchase", "CryptoInfo_CryptoId", "dbo.CryptoInfo");
+            DropForeignKey("dbo.CryptoInfo", "PurchaseId", "dbo.CryptoPurchase");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Portfolio", new[] { "CryptoUser_UserId" });
             DropIndex("dbo.CryptoPurchase", new[] { "Portfolio_PortfolioId" });
-            DropIndex("dbo.CryptoPurchase", new[] { "CryptoInfo_CryptoId" });
-            DropIndex("dbo.Portfolio", new[] { "User_UserId" });
+            DropIndex("dbo.CryptoInfo", new[] { "PurchaseId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.CryptoPurchase");
             DropTable("dbo.Portfolio");
             DropTable("dbo.CryptoUser");
+            DropTable("dbo.CryptoPurchase");
             DropTable("dbo.CryptoInfo");
         }
     }

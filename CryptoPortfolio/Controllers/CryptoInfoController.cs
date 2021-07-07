@@ -59,7 +59,6 @@ namespace CryptoPortfolio.Controllers
                     CryptoId = detail.CryptoId,
                     CryptoName = detail.CryptoName,
                     Amount = detail.Amount,
-                    Currency = detail.Currency
                 };
             return View(model);
         }

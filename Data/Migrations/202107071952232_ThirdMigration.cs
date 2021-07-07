@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstMigration1 : DbMigration
+    public partial class ThirdMigration : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.CryptoInfo", "TotalValue", c => c.Decimal(nullable: false, precision: 18, scale: 2));
+            AlterColumn("dbo.CryptoUser", "Currency", c => c.String(nullable: false, maxLength: 3));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.CryptoInfo", "TotalValue");
+            AlterColumn("dbo.CryptoUser", "Currency", c => c.String());
         }
     }
 }
