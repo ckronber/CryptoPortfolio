@@ -21,10 +21,10 @@
             @Html.DisplayNameFor(model => model.CryptoName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.Amount)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Amount)
+            @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TotalValue)
@@ -33,31 +33,31 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CryptoId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Currency)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CryptoName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Amount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TotalValue)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CryptoId}) |
-            @Html.ActionLink("Details", "Details", new { id = item.CryptoId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.CryptoId })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CryptoId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Currency)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CryptoName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Amount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TotalValue)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CryptoId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CryptoId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CryptoId })
+    </td>
+</tr>
 }
 
 </table>

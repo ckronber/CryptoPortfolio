@@ -36,8 +36,7 @@ namespace CryptoPortfolio.Services
                     CryptoId = e.CryptoId,
                     CryptoName = e.CryptoName,
                     Currency = e.Currency,
-                    Amount = e.Amount,
-                    TotalValue = e.TotalValue
+                    Amount = e.Amount
                 });
 
                 return query.ToList();
@@ -86,7 +85,5 @@ namespace CryptoPortfolio.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
     }
-    
 }

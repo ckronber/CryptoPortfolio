@@ -12,10 +12,10 @@ namespace CryptoPortfolio.Models
         public string Currency { get; set; }
         public string CryptoName { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public decimal Price { get; set; }
+        public decimal Price => getCryptoPrice(CryptoName, Currency);
         public decimal Amount { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public decimal TotalValue { get; set; }
+        public decimal TotalValue => Price * Amount;
 
         public virtual decimal getCryptoPrice(string cryptoTicker, string CurrencyTicker)
         {
