@@ -6,11 +6,6 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-    
-</p>
-
 @if (TempData.ContainsKey("SaveResult"))
 {
     <div class="alert alert-success fade in" role="alert">
@@ -23,10 +18,7 @@
 
 <table class="table">
     <tr>
-       
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Email)
         </th>
@@ -45,9 +37,7 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
+  
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
@@ -62,8 +52,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.UserId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.UserId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
+                @Html.ActionLink("Details", "Details", new { id = item.UserId }))
             </td>
         </tr>
     }

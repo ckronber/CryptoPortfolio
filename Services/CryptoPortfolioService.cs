@@ -12,7 +12,7 @@ namespace CryptoPortfolio.Services
             var entity = new Portfolio()
             {
                 Name = model.Name,
-                BullBear = model.BullBear
+                BullBear = model.BullBear,
             };
 
             using(var ctx = new ApplicationDbContext())
@@ -61,7 +61,6 @@ namespace CryptoPortfolio.Services
 
                 entity.Name = model.Name;
                 entity.BullBear = model.BullBear;
-                entity.TopCrypto = model.TopCrypto;
 
                 return ctx.SaveChanges() == 1;
             }

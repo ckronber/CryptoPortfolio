@@ -1,4 +1,4 @@
-﻿@model CryptoPortfolio.Models.CryptoPortfolioDetails
+﻿@model CryptoPortfolio.Models.CryptoPurchaseDetails
 
 @{
     ViewBag.Title = "Details";
@@ -7,15 +7,15 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CryptoPortfolioDetails</h4>
+    <h4>CryptoPurchaseDetails</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.PortfolioId)
+            @Html.DisplayNameFor(model => model.PurchaseId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PortfolioId)
+            @Html.DisplayFor(model => model.PurchaseId)
         </dd>
 
         <dt>
@@ -27,16 +27,32 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BullBear)
+            @Html.DisplayNameFor(model => model.PurchasePrice)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BullBear)
+            @Html.DisplayFor(model => model.PurchasePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseDate)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PortfolioId }) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.PurchaseId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

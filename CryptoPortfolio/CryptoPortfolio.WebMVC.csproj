@@ -358,9 +358,9 @@
     <Content Include="Views\CryptoPortfolio\Delete.cshtml" />
     <Content Include="Views\CryptoPurchase\Index.cshtml" />
     <Content Include="Views\CryptoPurchase\Create.cshtml" />
-    <Content Include="Views\CryptoPurchase\Details.cshtml" />
     <Content Include="Views\CryptoPurchase\Edit.cshtml" />
     <Content Include="Views\CryptoPurchase\Delete.cshtml" />
+    <Content Include="Views\CryptoPurchase\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

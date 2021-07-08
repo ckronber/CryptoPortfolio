@@ -110,6 +110,14 @@
     <Compile Include="Migrations\202107071958553_updatedUserModels.designer.cs">
       <DependentUpon>202107071958553_updatedUserModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107081228046_UpdatedPortfolio.cs" />
+    <Compile Include="Migrations\202107081228046_UpdatedPortfolio.designer.cs">
+      <DependentUpon>202107081228046_UpdatedPortfolio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107081238595_removedRequired.cs" />
+    <Compile Include="Migrations\202107081238595_removedRequired.designer.cs">
+      <DependentUpon>202107081238595_removedRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Portfolio.cs" />
     <Compile Include="CryptoPurchase.cs" />
@@ -136,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107071958553_updatedUserModels.resx">
       <DependentUpon>202107071958553_updatedUserModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081228046_UpdatedPortfolio.resx">
+      <DependentUpon>202107081228046_UpdatedPortfolio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081238595_removedRequired.resx">
+      <DependentUpon>202107081238595_removedRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,9 +10,8 @@ namespace CryptoPortfolio.Models
     public class CryptoPortfolioCreate
     {
         public string Name { get; set; }
-        public List<string> TopCrypto { get; set; }
         public string BullBear { get; set; }
-        public virtual CryptoUser CryptoUser { get; set; }
-        public virtual List<CryptoPurchase> CryptoPurchase { get; set; }
+        //public virtual CryptoUser CryptoUser { get; set; }
+        //public virtual List<CryptoPurchase> CryptoPurchase { get; set; }
     }
 }
