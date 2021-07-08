@@ -90,45 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptoInfo.cs" />
-    <Compile Include="Migrations\202107071535034_FirstMigration.cs" />
-    <Compile Include="Migrations\202107071535034_FirstMigration.designer.cs">
-      <DependentUpon>202107071535034_FirstMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107071538550_FirstMigration1.cs" />
-    <Compile Include="Migrations\202107071538550_FirstMigration1.designer.cs">
-      <DependentUpon>202107071538550_FirstMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107071931205_secondMigration.cs" />
-    <Compile Include="Migrations\202107071931205_secondMigration.designer.cs">
-      <DependentUpon>202107071931205_secondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107071952232_ThirdMigration.cs" />
-    <Compile Include="Migrations\202107071952232_ThirdMigration.designer.cs">
-      <DependentUpon>202107071952232_ThirdMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107071958553_updatedUserModels.cs" />
-    <Compile Include="Migrations\202107071958553_updatedUserModels.designer.cs">
-      <DependentUpon>202107071958553_updatedUserModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107081228046_UpdatedPortfolio.cs" />
-    <Compile Include="Migrations\202107081228046_UpdatedPortfolio.designer.cs">
-      <DependentUpon>202107081228046_UpdatedPortfolio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107081238595_removedRequired.cs" />
-    <Compile Include="Migrations\202107081238595_removedRequired.designer.cs">
-      <DependentUpon>202107081238595_removedRequired.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107081405485_changedUser.cs" />
-    <Compile Include="Migrations\202107081405485_changedUser.designer.cs">
-      <DependentUpon>202107081405485_changedUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107081500048_userUpdated.cs" />
-    <Compile Include="Migrations\202107081500048_userUpdated.designer.cs">
-      <DependentUpon>202107081500048_userUpdated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107081633218_ef6differentMethod.cs" />
-    <Compile Include="Migrations\202107081633218_ef6differentMethod.designer.cs">
-      <DependentUpon>202107081633218_ef6differentMethod.cs</DependentUpon>
+    <Compile Include="Migrations\202107081748094_FirstMigration.cs" />
+    <Compile Include="Migrations\202107081748094_FirstMigration.designer.cs">
+      <DependentUpon>202107081748094_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Portfolio.cs" />
@@ -142,35 +106,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107071535034_FirstMigration.resx">
-      <DependentUpon>202107071535034_FirstMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107071538550_FirstMigration1.resx">
-      <DependentUpon>202107071538550_FirstMigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107071931205_secondMigration.resx">
-      <DependentUpon>202107071931205_secondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107071952232_ThirdMigration.resx">
-      <DependentUpon>202107071952232_ThirdMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107071958553_updatedUserModels.resx">
-      <DependentUpon>202107071958553_updatedUserModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107081228046_UpdatedPortfolio.resx">
-      <DependentUpon>202107081228046_UpdatedPortfolio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107081238595_removedRequired.resx">
-      <DependentUpon>202107081238595_removedRequired.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107081405485_changedUser.resx">
-      <DependentUpon>202107081405485_changedUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107081500048_userUpdated.resx">
-      <DependentUpon>202107081500048_userUpdated.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107081633218_ef6differentMethod.resx">
-      <DependentUpon>202107081633218_ef6differentMethod.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107081748094_FirstMigration.resx">
+      <DependentUpon>202107081748094_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

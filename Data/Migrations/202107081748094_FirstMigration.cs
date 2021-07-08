@@ -12,15 +12,15 @@
                 c => new
                     {
                         CryptoId = c.Int(nullable: false, identity: true),
-                        Currency = c.String(nullable: false),
-                        CryptoName = c.String(nullable: false),
+                        Currency = c.String(nullable: false, maxLength: 3),
+                        CryptoName = c.String(nullable: false, maxLength: 6),
                         Amount = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Price = c.Decimal(nullable: false, precision: 18, scale: 2),
                         TotalValue = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        PurchaseId = c.Int(nullable: false),
+                        PurchaseId = c.Int(),
                     })
                 .PrimaryKey(t => t.CryptoId)
-                .ForeignKey("dbo.CryptoPurchase", t => t.PurchaseId, cascadeDelete: true)
+                .ForeignKey("dbo.CryptoPurchase", t => t.PurchaseId)
                 .Index(t => t.PurchaseId);
             
             CreateTable(
@@ -50,9 +50,8 @@
                         LastName = c.String(),
                         Email = c.String(),
                         TradeMoney = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Currency = c.String(),
+                        Currency = c.String(nullable: false, maxLength: 3),
                         PreferredExchange = c.String(),
-                        PortfolioId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.UserId);
             
@@ -63,11 +62,10 @@
                         PortfolioId = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         BullBear = c.String(),
-                        CryptoId = c.Int(nullable: false),
-                        CryptoUser_UserId = c.Int(nullable: false),
+                        CryptoUser_UserId = c.Int(),
                     })
                 .PrimaryKey(t => t.PortfolioId)
-                .ForeignKey("dbo.CryptoUser", t => t.CryptoUser_UserId, cascadeDelete: true)
+                .ForeignKey("dbo.CryptoUser", t => t.CryptoUser_UserId)
                 .Index(t => t.CryptoUser_UserId);
             
             CreateTable(
