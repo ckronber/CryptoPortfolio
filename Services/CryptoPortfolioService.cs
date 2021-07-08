@@ -21,6 +21,7 @@ namespace CryptoPortfolio.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
         public IEnumerable<CryptoPortfolioList> GetPortfolio()
         {
             using (var ctx = new ApplicationDbContext())
@@ -30,7 +31,7 @@ namespace CryptoPortfolio.Services
                     PortfolioId = e.PortfolioId,
                     Name = e.Name,
                     BullBear = e.BullBear,
-                    
+                    CryptoUser = e.CryptoUser
                 });
 
                 return query.ToArray();
@@ -41,14 +42,15 @@ namespace CryptoPortfolio.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Portfolios.Single(e => e.PortfolioId == id);
+                var entity = ctx.Portfolios.Single(e => e.PortfolioId == id);
 
                 return
                     new CryptoPortfolioDetails
                     {
-                        PortfolioId = query.PortfolioId,
-                        Name = query.Name,
-                        BullBear = query.BullBear
+                        PortfolioId = entity.PortfolioId,
+                        Name = entity.Name,
+                        BullBear = entity.BullBear,
+                        CryptoUser = entity.CryptoUser
                     };
             }
         }

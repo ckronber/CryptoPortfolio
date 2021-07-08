@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CryptoPortfolio.Data;
+
 namespace CryptoPortfolio.Models
 {
     public class UserAdd
@@ -16,6 +18,5 @@ namespace CryptoPortfolio.Models
         public decimal TradeMoney { get; set; }
         public string Currency { get; set; }
         public string PreferredExchange { get; set; }
-        public int? PortfolioId { get; set; }
     }
 }

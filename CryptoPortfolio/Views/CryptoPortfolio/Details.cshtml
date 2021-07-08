@@ -33,10 +33,51 @@
         <dd>
             @Html.DisplayFor(model => model.BullBear)
         </dd>
+    </dl>
 
+    <h5>CryptoUser Information</h5>
+    <hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.CryptoUser.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CryptoUser.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CryptoUser.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CryptoUser.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CryptoUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CryptoUser.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CryptoUser.TradeMoney)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CryptoUser.TradeMoney)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CryptoUser.PreferredExchange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CryptoUser.PreferredExchange)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.PortfolioId}) |
+    @Html.ActionLink("Edit", "Edit", new {id = Model.PortfolioId}) |
     @Html.ActionLink("Back to List", "Index")
 </p>

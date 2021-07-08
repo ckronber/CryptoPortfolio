@@ -25,7 +25,6 @@ namespace CryptoPortfolio.Services
                 LastName = model.LastName,
                 Email = model.Email,
                 TradeMoney = model.TradeMoney,
-                PortfolioId = model.PortfolioId,
                 Currency = model.Currency
             };
 

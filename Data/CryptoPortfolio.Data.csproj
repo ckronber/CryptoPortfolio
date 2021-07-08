@@ -118,6 +118,18 @@
     <Compile Include="Migrations\202107081238595_removedRequired.designer.cs">
       <DependentUpon>202107081238595_removedRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107081405485_changedUser.cs" />
+    <Compile Include="Migrations\202107081405485_changedUser.designer.cs">
+      <DependentUpon>202107081405485_changedUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107081500048_userUpdated.cs" />
+    <Compile Include="Migrations\202107081500048_userUpdated.designer.cs">
+      <DependentUpon>202107081500048_userUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107081633218_ef6differentMethod.cs" />
+    <Compile Include="Migrations\202107081633218_ef6differentMethod.designer.cs">
+      <DependentUpon>202107081633218_ef6differentMethod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Portfolio.cs" />
     <Compile Include="CryptoPurchase.cs" />
@@ -150,6 +162,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107081238595_removedRequired.resx">
       <DependentUpon>202107081238595_removedRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081405485_changedUser.resx">
+      <DependentUpon>202107081405485_changedUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081500048_userUpdated.resx">
+      <DependentUpon>202107081500048_userUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107081633218_ef6differentMethod.resx">
+      <DependentUpon>202107081633218_ef6differentMethod.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

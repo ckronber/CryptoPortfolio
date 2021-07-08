@@ -69,8 +69,7 @@ namespace CryptoPortfolio.Controllers
                    TradeMoney = detail.TradeMoney,
                    Currency = detail.Currency,
                    FirstName = detail.FirstName,
-                   LastName = detail.LastName,
-
+                   LastName = detail.LastName
                 };
             return View(model);
         }

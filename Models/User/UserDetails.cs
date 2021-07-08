@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptoPortfolio.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -15,5 +16,6 @@ namespace CryptoPortfolio.Models
         public decimal TradeMoney { get; set; }
         public string Currency { get; set; }
         public string PreferredExchange { get; set; }
+
     }
 }

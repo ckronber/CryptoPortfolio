@@ -11,7 +11,7 @@ namespace CryptoPortfolio.Models
     {
         public string Name { get; set; }
         public string BullBear { get; set; }
-        //public virtual CryptoUser CryptoUser { get; set; }
+        public virtual CryptoUser CryptoUser { get; set; }
         //public virtual List<CryptoPurchase> CryptoPurchase { get; set; }
     }
 }

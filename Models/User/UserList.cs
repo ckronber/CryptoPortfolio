@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CryptoPortfolio.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CryptoPortfolio.Models
 {
@@ -8,6 +10,7 @@ namespace CryptoPortfolio.Models
     {
         public int UserId { get; set; }
         public Guid LogId { get; set; }
+        
         [EmailAddress]
         public string Email { get; set; }
         public decimal TradeMoney { get; set; }
