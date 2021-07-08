@@ -13,6 +13,7 @@ namespace CryptoPortfolio.Services
             {
                 Name = model.Name,
                 BullBear = model.BullBear,
+                CryptoUser_UserId = 1,
             };
 
             using(var ctx = new ApplicationDbContext())

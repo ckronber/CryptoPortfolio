@@ -90,9 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptoInfo.cs" />
-    <Compile Include="Migrations\202107081748094_FirstMigration.cs" />
-    <Compile Include="Migrations\202107081748094_FirstMigration.designer.cs">
-      <DependentUpon>202107081748094_FirstMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202107081804413_FirstMigration.cs" />
+    <Compile Include="Migrations\202107081804413_FirstMigration.designer.cs">
+      <DependentUpon>202107081804413_FirstMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Portfolio.cs" />
@@ -106,8 +106,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107081748094_FirstMigration.resx">
-      <DependentUpon>202107081748094_FirstMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107081804413_FirstMigration.resx">
+      <DependentUpon>202107081804413_FirstMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
