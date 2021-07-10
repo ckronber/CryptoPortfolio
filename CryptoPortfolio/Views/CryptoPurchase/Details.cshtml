@@ -50,7 +50,7 @@
             @Html.DisplayFor(model => model.PurchaseDate)
         </dd>
 
-        @foreach (CryptoPortfolio.Models.CryptoInfoDetails myCrypto in Model.CryptoInfo)
+        @foreach (CryptoPortfolio.Data.CryptoInfo myCrypto in Model.CryptoInfo)
         {
             <dt>
                 @Html.DisplayNameFor(model => myCrypto.CryptoName)
@@ -65,7 +65,7 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(modle => myCrypto.Price)
+                @Html.DisplayFor(model => myCrypto.Price)
             </dd>
         }
     </dl>

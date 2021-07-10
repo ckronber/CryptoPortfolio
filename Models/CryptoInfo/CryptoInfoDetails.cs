@@ -8,6 +8,7 @@ namespace CryptoPortfolio.Models
     public class CryptoInfoDetails
     {
         public int CryptoId { get; set; }
+        public int? PurchaseId { get; set; }
         public string Currency { get; set; }
         public string CryptoName { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]

@@ -61,13 +61,13 @@ namespace CryptoPortfolio.Services
                         PurchaseDate = query.PurchaseDate,
                         PurchaseAmount = query.PurchaseAmount,
                         PurchasePrice = query.PurchasePrice,
-                        CryptoInfo = query.CryptoInfo.Select(e => new CryptoInfoDetails()
+                        CryptoInfo = query.CryptoInfo.Select(e => new CryptoInfo()
                         {
                             CryptoId = e.CryptoId,
                             CryptoName = e.CryptoName,
                             Amount = e.Amount,
-                            //Price = e.Price,
-                            //TotalValue = e.TotalValue
+                           //Price = e.Price,
+                           //TotalValue = e.TotalValue
                         }).ToList()
                     };
             }

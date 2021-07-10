@@ -13,5 +13,6 @@ namespace CryptoPortfolio.Models
         [StringLength(3, ErrorMessage = "The Crypto Currency Ticker value cannot exceed 3 characters.")]
         public string CryptoName { get; set; }
         public decimal Amount { get; set; }
+        public decimal Price { get; set; }
     }
 }
