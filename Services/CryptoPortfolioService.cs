@@ -32,7 +32,7 @@ namespace CryptoPortfolio.Services
                     PortfolioId = e.PortfolioId,
                     Name = e.Name,
                     BullBear = e.BullBear,
-                    CryptoUser = e.CryptoUser
+                    CryptoUser = e.CryptoUser,
                 });
 
                 return query.ToArray();
@@ -51,7 +51,16 @@ namespace CryptoPortfolio.Services
                         PortfolioId = entity.PortfolioId,
                         Name = entity.Name,
                         BullBear = entity.BullBear,
-                        CryptoUser = entity.CryptoUser
+                        CryptoUser = entity.CryptoUser,
+                        /*
+                        CryptoPurchase = entity.CryptoPurchase.Select(cp => new CryptoPurchase
+                        {
+                            Name = cp.Name,
+                            Gain = cp.Gain,
+                            PurchaseAmount = cp.PurchaseAmount,
+                            PurchaseDate = cp.PurchaseDate,
+                            GainPercent = cp.GainPercent
+                        }).ToList()*/
                     };
             }
         }

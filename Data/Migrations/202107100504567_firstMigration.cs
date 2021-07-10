@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FirstMigration : DbMigration
+    public partial class firstMigration : DbMigration
     {
         public override void Up()
         {
@@ -34,11 +34,24 @@
                         Gain = c.Decimal(nullable: false, precision: 18, scale: 2),
                         GainPercent = c.Decimal(nullable: false, precision: 18, scale: 2),
                         PurchaseDate = c.DateTimeOffset(nullable: false, precision: 7),
-                        Portfolio_PortfolioId = c.Int(),
+                        PortfolioId = c.Int(),
                     })
                 .PrimaryKey(t => t.PurchaseId)
-                .ForeignKey("dbo.Portfolio", t => t.Portfolio_PortfolioId)
-                .Index(t => t.Portfolio_PortfolioId);
+                .ForeignKey("dbo.Portfolio", t => t.PortfolioId)
+                .Index(t => t.PortfolioId);
+            
+            CreateTable(
+                "dbo.Portfolio",
+                c => new
+                    {
+                        PortfolioId = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        BullBear = c.String(),
+                        CryptoUser_UserId = c.Int(),
+                    })
+                .PrimaryKey(t => t.PortfolioId)
+                .ForeignKey("dbo.CryptoUser", t => t.CryptoUser_UserId)
+                .Index(t => t.CryptoUser_UserId);
             
             CreateTable(
                 "dbo.CryptoUser",
@@ -54,19 +67,6 @@
                         PreferredExchange = c.String(),
                     })
                 .PrimaryKey(t => t.UserId);
-            
-            CreateTable(
-                "dbo.Portfolio",
-                c => new
-                    {
-                        PortfolioId = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        BullBear = c.String(),
-                        CryptoUser_UserId = c.Int(),
-                    })
-                .PrimaryKey(t => t.PortfolioId)
-                .ForeignKey("dbo.CryptoUser", t => t.CryptoUser_UserId)
-                .Index(t => t.CryptoUser_UserId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -146,23 +146,23 @@
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
-            DropForeignKey("dbo.Portfolio", "CryptoUser_UserId", "dbo.CryptoUser");
-            DropForeignKey("dbo.CryptoPurchase", "Portfolio_PortfolioId", "dbo.Portfolio");
             DropForeignKey("dbo.CryptoInfo", "PurchaseId", "dbo.CryptoPurchase");
+            DropForeignKey("dbo.CryptoPurchase", "PortfolioId", "dbo.Portfolio");
+            DropForeignKey("dbo.Portfolio", "CryptoUser_UserId", "dbo.CryptoUser");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.Portfolio", new[] { "CryptoUser_UserId" });
-            DropIndex("dbo.CryptoPurchase", new[] { "Portfolio_PortfolioId" });
+            DropIndex("dbo.CryptoPurchase", new[] { "PortfolioId" });
             DropIndex("dbo.CryptoInfo", new[] { "PurchaseId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Portfolio");
             DropTable("dbo.CryptoUser");
+            DropTable("dbo.Portfolio");
             DropTable("dbo.CryptoPurchase");
             DropTable("dbo.CryptoInfo");
         }

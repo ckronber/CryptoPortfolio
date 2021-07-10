@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CryptoPortfolio.Data;
+
 namespace CryptoPortfolio.Models
 { 
 
@@ -16,5 +18,6 @@ namespace CryptoPortfolio.Models
         public decimal PurchaseAmount { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTimeOffset PurchaseDate { get; set; }
+        public virtual Portfolio Portfolio { get; set; }
     }
 }

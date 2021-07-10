@@ -76,6 +76,18 @@
             @Html.DisplayFor(model => model.CryptoUser.PreferredExchange)
         </dd>
     </dl>
+
+    <h5>CryptoPurchase Information</h5>
+    <hr />
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.CryptoPurchase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CryptoPurchase)
+        </dd>
+    </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new {id = Model.PortfolioId}) |

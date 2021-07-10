@@ -34,10 +34,15 @@ namespace CryptoPortfolio.Services
                     Name = e.Name,
                     PurchaseAmount = e.PurchaseAmount,
                     PurchaseDate = e.PurchaseDate,
-                    PurchasePrice = e.PurchasePrice
+                    PurchasePrice = e.PurchasePrice,
+                    /*
+                    CryptoInfo = e.CryptoInfo.Select(cr => new CryptoInfo
+                    {
+                        CryptoName = cr.CryptoName,
+                        Amount = cr.Amount,
+                    }).ToList()*/
                 });
-
-                return query.ToArray();
+                return query.ToList();
             }
         }
 
@@ -55,7 +60,15 @@ namespace CryptoPortfolio.Services
                         PurchaseDate = query.PurchaseDate,
                         PurchaseAmount = query.PurchaseAmount,
                         PurchasePrice = query.PurchasePrice,
-                        CryptoInfo = query.CryptoInfo,
+                        /*
+                        CryptoInfo = query.CryptoInfo.Select(e => new CryptoInfo()
+                        {
+                            CryptoId = e.CryptoId,
+                            CryptoName = e.CryptoName,
+                            Amount = e.Amount,
+                            Price = e.Price,
+                            TotalValue = e.TotalValue
+                        }).ToList()*/
                     };
             }
         }

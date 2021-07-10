@@ -2,6 +2,8 @@
 using RestSharp;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace CryptoPortfolio.Data
 {
@@ -20,6 +22,7 @@ namespace CryptoPortfolio.Data
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal Price { get; set; }
         public decimal TotalValue { get; set; }
+        [ForeignKey("CryptoPurchase")]
         public int? PurchaseId { get; set; }
         public virtual CryptoPurchase CryptoPurchase { get; set; }
 
