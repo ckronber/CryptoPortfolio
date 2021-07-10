@@ -35,6 +35,7 @@ namespace CryptoPortfolio.Services
                     PurchaseAmount = e.PurchaseAmount,
                     PurchaseDate = e.PurchaseDate,
                     PurchasePrice = e.PurchasePrice,
+                    //CryptoInfo = e.CryptoInfo
                     /*
                     CryptoInfo = e.CryptoInfo.Select(cr => new CryptoInfo
                     {
@@ -60,18 +61,19 @@ namespace CryptoPortfolio.Services
                         PurchaseDate = query.PurchaseDate,
                         PurchaseAmount = query.PurchaseAmount,
                         PurchasePrice = query.PurchasePrice,
-                        /*
-                        CryptoInfo = query.CryptoInfo.Select(e => new CryptoInfo()
+                        CryptoInfo = query.CryptoInfo.Select(e => new CryptoInfoDetails()
                         {
                             CryptoId = e.CryptoId,
                             CryptoName = e.CryptoName,
                             Amount = e.Amount,
-                            Price = e.Price,
-                            TotalValue = e.TotalValue
-                        }).ToList()*/
+                            //Price = e.Price,
+                            //TotalValue = e.TotalValue
+                        }).ToList()
                     };
             }
+
         }
+
 
         public bool UpdatePurchase(CryptoPurchaseEdit model)
         {

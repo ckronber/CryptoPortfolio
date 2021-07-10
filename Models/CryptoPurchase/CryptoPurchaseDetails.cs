@@ -14,7 +14,8 @@ namespace CryptoPortfolio.Models
         public decimal PurchaseAmount { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTimeOffset PurchaseDate { get; set; }
+        public int? PortfolioId { get; set; }
         public virtual Portfolio Portfolio { get; set; }
-        public virtual CryptoInfo CryptoInfo { get; set; }
+        public virtual List<CryptoInfoDetails> CryptoInfo { get; set; }
     }
 }

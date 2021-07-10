@@ -25,9 +25,5 @@ namespace CryptoPortfolio.Data
         [ForeignKey("CryptoPurchase")]
         public int? PurchaseId { get; set; }
         public virtual CryptoPurchase CryptoPurchase { get; set; }
-
-        // To be added later. This is a stretch goal
-        //public int ExchangeId { get; set; }
-        //public Exchange Exchange { get; set; }
     }
 }

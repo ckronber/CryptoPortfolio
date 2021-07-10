@@ -52,7 +52,6 @@ namespace CryptoPortfolio.Services
                         Name = entity.Name,
                         BullBear = entity.BullBear,
                         CryptoUser = entity.CryptoUser,
-                        /*
                         CryptoPurchase = entity.CryptoPurchase.Select(cp => new CryptoPurchase
                         {
                             Name = cp.Name,
@@ -60,7 +59,7 @@ namespace CryptoPortfolio.Services
                             PurchaseAmount = cp.PurchaseAmount,
                             PurchaseDate = cp.PurchaseDate,
                             GainPercent = cp.GainPercent
-                        }).ToList()*/
+                        }).ToList()
                     };
             }
         }
