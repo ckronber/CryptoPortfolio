@@ -20,6 +20,6 @@ namespace CryptoPortfolio.Data
         [ForeignKey("Portfolio")]
         public int? PortfolioId { get; set; }
         public virtual Portfolio Portfolio { get; set; }
-        //public virtual List<CryptoInfo> CryptoInfo{ get; set; }
+        public virtual List<CryptoInfo> CryptoInfo{ get; set; }
     }
 }
