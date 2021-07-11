@@ -80,13 +80,23 @@
     <h5>CryptoPurchase Information</h5>
     <hr />
     <dl>
-        <dt>
-            @Html.DisplayNameFor(model => model.CryptoPurchase)
-        </dt>
+        @foreach (CryptoPortfolio.Data.CryptoPurchase myPurchase in Model.CryptoPurchase)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => myPurchase.PurchaseId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CryptoPurchase)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => myPurchase.PurchaseId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => myPurchase.PurchaseDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => myPurchase.PurchaseDate)
+            </dd>
+        }
     </dl>
 </div>
 <p>

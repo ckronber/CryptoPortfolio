@@ -21,6 +21,7 @@ namespace CryptoPortfolio.Data
         public decimal Amount { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal Price { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal TotalValue { get; set; }
         [ForeignKey("CryptoPurchase")]
         public int? PurchaseId { get; set; }

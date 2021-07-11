@@ -19,6 +19,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.PortfolioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortfolioId)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
 
@@ -50,23 +58,42 @@
             @Html.DisplayFor(model => model.PurchaseDate)
         </dd>
 
+        <br />
+
         @foreach (CryptoPortfolio.Data.CryptoInfo myCrypto in Model.CryptoInfo)
         {
             <dt>
-                @Html.DisplayNameFor(model => myCrypto.CryptoName)
+                @Html.DisplayNameFor(modelItem => myCrypto.CryptoName)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => myCrypto.CryptoName)
+                @Html.DisplayFor(modelItem => myCrypto.CryptoName)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => myCrypto.Price)
+                @Html.DisplayNameFor(modelItem => myCrypto.Price)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => myCrypto.Price)
+                @Html.DisplayFor(modelItem => myCrypto.Price)
             </dd>
+
+            <dt>
+                @Html.DisplayNameFor(modelItem => myCrypto.Amount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => myCrypto.Amount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(modelItem => myCrypto.TotalValue)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => myCrypto.TotalValue)
+            </dd>
+            <br />
         }
     </dl>
 </div>

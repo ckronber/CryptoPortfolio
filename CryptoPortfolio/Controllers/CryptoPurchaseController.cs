@@ -25,7 +25,7 @@ namespace CryptoPortfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CryptoPurchaseCreate model)
         {
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
                 return View(model);
 
             var service = CreateCryptoPurchase();
@@ -57,6 +57,7 @@ namespace CryptoPortfolio.Controllers
             var model =
                 new CryptoPurchaseEdit()
                 {
+                    PortfolioId = detail.PortfolioId,
                     PurchaseId = detail.PurchaseId,
                     PurchaseDate = detail.PurchaseDate,
                     PurchasePrice = detail.PurchasePrice,

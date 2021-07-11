@@ -54,6 +54,7 @@ namespace CryptoPortfolio.Services
                         CryptoUser = entity.CryptoUser,
                         CryptoPurchase = entity.CryptoPurchase.Select(cp => new CryptoPurchase
                         {
+                            PurchaseId = cp.PurchaseId,
                             Name = cp.Name,
                             Gain = cp.Gain,
                             PurchaseAmount = cp.PurchaseAmount,

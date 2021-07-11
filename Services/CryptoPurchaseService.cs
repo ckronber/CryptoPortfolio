@@ -31,17 +31,12 @@ namespace CryptoPortfolio.Services
                 var query = ctx.Purchases.Select(e => new CryptoPurchaseList
                 {
                     PurchaseId = e.PurchaseId,
+                    PortfolioId = e.PortfolioId,
                     Name = e.Name,
                     PurchaseAmount = e.PurchaseAmount,
                     PurchaseDate = e.PurchaseDate,
                     PurchasePrice = e.PurchasePrice,
-                    //CryptoInfo = e.CryptoInfo
-                    /*
-                    CryptoInfo = e.CryptoInfo.Select(cr => new CryptoInfo
-                    {
-                        CryptoName = cr.CryptoName,
-                        Amount = cr.Amount,
-                    }).ToList()*/
+                    CryptoInfo = e.CryptoInfo
                 });
                 return query.ToList();
             }
@@ -61,13 +56,14 @@ namespace CryptoPortfolio.Services
                         PurchaseDate = query.PurchaseDate,
                         PurchaseAmount = query.PurchaseAmount,
                         PurchasePrice = query.PurchasePrice,
+                        PortfolioId = query.PortfolioId,
                         CryptoInfo = query.CryptoInfo.Select(e => new CryptoInfo()
                         {
                             CryptoId = e.CryptoId,
                             CryptoName = e.CryptoName,
                             Amount = e.Amount,
-                           //Price = e.Price,
-                           //TotalValue = e.TotalValue
+                            Price = e.Price,
+                            TotalValue = e.TotalValue
                         }).ToList()
                     };
             }
@@ -81,6 +77,7 @@ namespace CryptoPortfolio.Services
             {
                 var entity = ctx.Purchases.Single(e => e.PurchaseId == model.PurchaseId);
 
+                entity.PortfolioId = model.PortfolioId;
                 entity.Name = model.Name;
                 entity.PurchaseAmount = model.PurchaseAmount;
                 entity.PurchasePrice = model.PurchasePrice;
