@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class firstMigration : DbMigration
+    public partial class secondMigration : DbMigration
     {
         public override void Up()
         {
@@ -48,6 +48,7 @@
                         Name = c.String(),
                         BullBear = c.String(),
                         CryptoUser_UserId = c.Int(),
+                        PurchaseId = c.Int(),
                     })
                 .PrimaryKey(t => t.PortfolioId)
                 .ForeignKey("dbo.CryptoUser", t => t.CryptoUser_UserId)
@@ -61,12 +62,13 @@
                         LogId = c.Guid(nullable: false),
                         FirstName = c.String(),
                         LastName = c.String(),
-                        Email = c.String(),
+                        Email = c.String(maxLength: 50),
                         TradeMoney = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Currency = c.String(nullable: false, maxLength: 3),
                         PreferredExchange = c.String(),
                     })
-                .PrimaryKey(t => t.UserId);
+                .PrimaryKey(t => t.UserId)
+                .Index(t => t.Email, unique: true);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -153,6 +155,7 @@
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.CryptoUser", new[] { "Email" });
             DropIndex("dbo.Portfolio", new[] { "CryptoUser_UserId" });
             DropIndex("dbo.CryptoPurchase", new[] { "PortfolioId" });
             DropIndex("dbo.CryptoInfo", new[] { "PurchaseId" });

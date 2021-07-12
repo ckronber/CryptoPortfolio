@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2 class="">Create</h2>
 
 
 @using (Html.BeginForm()) 
@@ -19,8 +19,8 @@
     <div class="form-group">
         @Html.LabelFor(model => model.PortfolioId, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.PortfolioId, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PortfolioId, "", new { @class = "text-danger" })
+           @Html.EditorFor(model => model.PortfolioId, new { htmlAttributes = new { @class = "form-control" } })
+           @Html.ValidationMessageFor(model => model.PortfolioId, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -55,7 +55,6 @@
             @Html.ValidationMessageFor(model => model.PurchaseDate, "", new { @class = "text-danger" })
         </div>
     </div>
-
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

@@ -3,9 +3,26 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1 class="text-capitalize text-center">Crypto Portfolio</h1>
+    <p class="text-justify text-left" >Crypto Portfolio is a place where you can put all your cryptocurrency purchases in one place and see your investments and gains/losses in one place. If you have purchased cryptocurrency on more than one exchange, it can take some time to login to all of these exchanges. It takes even more time if you have 2FA enabled. </p>
+    <p><a href="https://en.wikipedia.org/wiki/Cryptocurrency" class="btn btn-primary btn-lg">Learn more about Cryptocurrency</a></p>
+
+    <form>
+        <label for="number">Select a number</label>
+        <select name="number" id="number">
+            <option selected="selected">1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
+        <submit onclick=""></submit>
+    </form>
 </div>
 
 <div class="row">
@@ -29,3 +46,15 @@
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(function () {
+
+        $("#number")
+            .selectmenu()
+            .selectmenu("menuWidget")
+            .addClass("overflow");
+    });
+</script>

@@ -1,12 +1,16 @@
-﻿using CryptoPortfolio.Models;
+﻿using CryptoPortfolio.Data;
+using CryptoPortfolio.Models;
 using CryptoPortfolio.Services;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace CryptoPortfolio.Controllers
-{
+{ 
     [Authorize]
     public class CryptoPurchaseController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: CryptoPurchase
         public ActionResult Index()
         {
@@ -17,6 +21,12 @@ namespace CryptoPortfolio.Controllers
         // GET: Create
         public ActionResult Create()
         {
+            CryptoPurchaseCreate model = new CryptoPurchaseCreate();
+
+            var portfolios = _db.Portfolios.ToList();
+
+           // model.Portfolios = new SelectList(_db.Portfolios, "PortfolioId", "Name");
+
             return View();
         }
 

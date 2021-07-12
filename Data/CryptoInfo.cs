@@ -20,7 +20,7 @@ namespace CryptoPortfolio.Data
         [Required]
         public decimal Amount { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public decimal Price { get; set; }
+        public virtual decimal Price { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal TotalValue { get; set; }
         [ForeignKey("CryptoPurchase")]

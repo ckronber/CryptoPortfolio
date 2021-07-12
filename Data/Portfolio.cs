@@ -13,7 +13,9 @@ namespace CryptoPortfolio.Data
         public string BullBear { get; set; }
         [ForeignKey("CryptoUser")]
         public int? CryptoUser_UserId { get; set; }
-        public virtual CryptoUser CryptoUser {get; set;}
+        public virtual CryptoUser CryptoUser { get; set; }
+        [ForeignKey("CryptoPurchase")]
+        public int?  PurchaseId {get;set;}
         public virtual List<CryptoPurchase> CryptoPurchase { get; set; }
     }
 }
