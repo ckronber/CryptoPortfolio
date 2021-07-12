@@ -13,7 +13,7 @@ namespace CryptoPortfolio.Services
             {
                 Name = model.Name,
                 BullBear = model.BullBear,
-                CryptoUser_UserId = 1,
+                CryptoUser_UserId = model.CryptoUser_UserId,
             };
 
             using(var ctx = new ApplicationDbContext())
@@ -56,6 +56,7 @@ namespace CryptoPortfolio.Services
                         {
                             PurchaseId = cp.PurchaseId,
                             DateAdded = cp.DateAdded,
+                            TotalCryptoValue = cp.getTotalCryptoValue()
                         }).ToList()
                     };
             }
@@ -69,6 +70,7 @@ namespace CryptoPortfolio.Services
 
                 entity.Name = model.Name;
                 entity.BullBear = model.BullBear;
+                entity.CryptoUser_UserId = model.CryptoUser_UserId;
 
                 return ctx.SaveChanges() == 1;
             }

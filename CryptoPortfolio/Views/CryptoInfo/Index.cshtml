@@ -29,9 +29,6 @@
         <th>
             @Html.DisplayNameFor(model => model.TotalValue)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PurchaseDate)
-        </th>
         <th></th>
     </tr>
 
@@ -56,9 +53,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TotalValue)
             </td>
-            <th>
-                @Html.DisplayFor(modelItem => item.PurchaseDate)
-            </th>
+      
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.CryptoId }) |
                 @Html.ActionLink("Details", "Details", new { id = item.CryptoId }) |

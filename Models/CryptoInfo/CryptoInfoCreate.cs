@@ -17,7 +17,5 @@ namespace CryptoPortfolio.Models
         public decimal Amount { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal PurchasePrice { get; set; }
-        public DateTimeOffset? PurchaseDate { get; set; }
-
     }
 }

@@ -55,13 +55,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CryptoUser.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CryptoUser.Email)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.CryptoUser.TradeMoney)
         </dt>
 
@@ -98,11 +91,12 @@
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => myPurchase.TotalPurchasePrice)
+                @Html.DisplayNameFor(model => myPurchase.TotalCryptoValue)
             </dt>
             <dd>
-                @Html.DisplayFor(model => myPurchase.TotalPurchasePrice)
+                @Html.DisplayFor(model => myPurchase.TotalCryptoValue)
             </dd>
+
             <dt>
                 @Html.DisplayNameFor(model => myPurchase.CryptoInfo)
             </dt>
@@ -110,9 +104,10 @@
                 @Html.DisplayFor(model => myPurchase.CryptoInfo)
             </dd>
         }
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {id = Model.PortfolioId}) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PortfolioId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

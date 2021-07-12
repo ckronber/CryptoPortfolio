@@ -10,6 +10,7 @@ namespace CryptoPortfolio.Models
     public class CryptoPortfolioDetails
     {
         public int PortfolioId { get; set; }
+        public int CryptoUser_UserId { get; set; }
         public string Name { get; set; }
         public string BullBear { get; set; }
         public virtual CryptoUser CryptoUser { get; set; }

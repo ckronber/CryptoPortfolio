@@ -12,7 +12,7 @@
             AddColumn("dbo.CryptoInfo", "Gain", c => c.Decimal(nullable: false, precision: 18, scale: 2));
             AddColumn("dbo.CryptoInfo", "GainPercent", c => c.Decimal(nullable: false, precision: 18, scale: 2));
             AddColumn("dbo.CryptoInfo", "PurchaseDate", c => c.DateTimeOffset(precision: 7));
-            AddColumn("dbo.CryptoPurchase", "TotalPurchasePrice", c => c.Decimal(nullable: false, precision: 18, scale: 2));
+            AddColumn("dbo.CryptoPurchase", "TotalCryptoValue", c => c.Decimal(nullable: false, precision: 18, scale: 2));
             AddColumn("dbo.CryptoPurchase", "DateAdded", c => c.DateTimeOffset(nullable: false, precision: 7));
             DropColumn("dbo.CryptoInfo", "Price");
             DropColumn("dbo.CryptoPurchase", "Name");
@@ -33,7 +33,7 @@
             AddColumn("dbo.CryptoPurchase", "Name", c => c.String());
             AddColumn("dbo.CryptoInfo", "Price", c => c.Decimal(nullable: false, precision: 18, scale: 2));
             DropColumn("dbo.CryptoPurchase", "DateAdded");
-            DropColumn("dbo.CryptoPurchase", "TotalPurchasePrice");
+            DropColumn("dbo.CryptoPurchase", "TotalCryptoValue");
             DropColumn("dbo.CryptoInfo", "PurchaseDate");
             DropColumn("dbo.CryptoInfo", "GainPercent");
             DropColumn("dbo.CryptoInfo", "Gain");

@@ -10,9 +10,8 @@ namespace CryptoPortfolio.Models
     {
         public int UserId { get; set; }
         public Guid LogId { get; set; }
-        
-        [EmailAddress]
-        public string Email { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public decimal TradeMoney { get; set; }
         public string Currency { get; set; }
         public string PreferredExchange { get; set; }

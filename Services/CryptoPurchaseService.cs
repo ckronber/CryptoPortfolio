@@ -48,7 +48,7 @@ namespace CryptoPortfolio.Services
                     {
                         PurchaseId = query.PurchaseId,
                         PortfolioId = query.PortfolioId,
-                        PurchaseDate = query.DateAdded,
+                        DateAdded = query.DateAdded,
                         CryptoInfo = query.CryptoInfo.Select(e => new CryptoInfo()
                         {
                             CryptoId = e.CryptoId,

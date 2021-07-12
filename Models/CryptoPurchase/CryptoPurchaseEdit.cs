@@ -13,7 +13,7 @@ namespace CryptoPortfolio.Models
         public int PurchaseId { get; set; }
         public int? PortfolioId { get; set; }
       
-        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTimeOffset DateAdded { get; set; }
     }
 }

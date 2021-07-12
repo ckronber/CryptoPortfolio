@@ -23,7 +23,6 @@ namespace CryptoPortfolio.Services
                 PreferredExchange = model.PreferredExchange,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                Email = model.Email,
                 TradeMoney = model.TradeMoney,
                 Currency = model.Currency
             };
@@ -42,7 +41,8 @@ namespace CryptoPortfolio.Services
                 var query = ctx.CryptoUsers.Select(e => new UserList
                 {
                     UserId = e.UserId,
-                    Email = e.Email,
+                    FirstName = e.FirstName,
+                    LastName = e.LastName,
                     Currency = e.Currency,
                     TradeMoney = e.TradeMoney,
                     PreferredExchange = e.PreferredExchange,
@@ -66,7 +66,6 @@ namespace CryptoPortfolio.Services
                         PreferredExchange = query.PreferredExchange,
                         FirstName = query.FirstName,
                         LastName = query.LastName,
-                        Email = query.Email,
                         TradeMoney = query.TradeMoney,
                         Currency = query.Currency
                     };

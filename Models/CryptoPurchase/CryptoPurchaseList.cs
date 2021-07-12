@@ -12,6 +12,7 @@ namespace CryptoPortfolio.Models
     public class CryptoPurchaseList
     {
         public int PurchaseId { get; set; }
+        public decimal TotalCryptoValue { get; set; }
 
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTimeOffset DateAdded { get; set; }

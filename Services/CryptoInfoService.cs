@@ -19,7 +19,6 @@ namespace CryptoPortfolio.Services
                 PurchaseId = model.PurchaseId,
                 Amount = model.Amount,
                 PurchasePrice = model.PurchasePrice,
-                PurchaseDate = model.PurchaseDate,
                 CurrentPrice = getCryptoPrice(model.CryptoName,model.Currency),
                 TotalValue = getCryptoPrice(model.CryptoName, model.Currency)*model.Amount
             };
@@ -43,7 +42,6 @@ namespace CryptoPortfolio.Services
                     Amount = e.Amount,
                     CurrentPrice = e.CurrentPrice,
                     TotalValue = e.TotalValue,
-                    PurchaseDate = e.PurchaseDate
                 });
 
                 return query.ToList();
@@ -82,7 +80,6 @@ namespace CryptoPortfolio.Services
                 entity.Amount = model.Amount;
                 entity.PurchaseId = model.PurchaseId;
                 entity.PurchasePrice = model.PurchasePrice;
-                entity.PurchaseDate = model.PurchaseDate;
                 entity.CurrentPrice = getCryptoPrice(model.CryptoName, model.Currency);
                 entity.TotalValue = getCryptoPrice(model.CryptoName, model.Currency) * model.Amount;
 
