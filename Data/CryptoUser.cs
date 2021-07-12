@@ -12,9 +12,7 @@ namespace CryptoPortfolio.Data
         public Guid LogId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        [EmailAddress]
-        [Index(IsUnique = true)]
-        [StringLength(50)]
+        [EmailAddress,Index(IsUnique = true), StringLength(50)]
         public string Email { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal TradeMoney { get; set; }

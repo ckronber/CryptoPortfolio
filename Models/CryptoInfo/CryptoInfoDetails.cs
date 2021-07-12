@@ -2,6 +2,7 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.ComponentModel.DataAnnotations;
+using System;
 
 namespace CryptoPortfolio.Models
 {
@@ -12,11 +13,24 @@ namespace CryptoPortfolio.Models
         public string Currency { get; set; }
         public string CryptoName { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public decimal Price { get; set; }
+        public decimal CurrentPrice { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public decimal PurchasePrice { get; set; }
         public decimal Amount { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal TotalValue { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
+        public DateTimeOffset? PurchaseDate { get; set; }
 
+        public decimal? Gain { 
+            get
+            {
+                if (PurchasePrice > 0)
+                    return CurrentPrice / PurchasePrice;
+                else
+                    return null;
+            }
+        }
+        public decimal? GainPercent => Gain * 100;
     }
- 
 }

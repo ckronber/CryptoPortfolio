@@ -18,7 +18,9 @@ namespace CryptoPortfolio.Services
                 Currency = model.Currency,
                 PurchaseId = model.PurchaseId,
                 Amount = model.Amount,
-                Price = getCryptoPrice(model.CryptoName,model.Currency),
+                PurchasePrice = model.PurchasePrice,
+                PurchaseDate = model.PurchaseDate,
+                CurrentPrice = getCryptoPrice(model.CryptoName,model.Currency),
                 TotalValue = getCryptoPrice(model.CryptoName, model.Currency)*model.Amount
             };
 
@@ -39,8 +41,9 @@ namespace CryptoPortfolio.Services
                     CryptoName = e.CryptoName,
                     Currency = e.Currency,
                     Amount = e.Amount,
-                    Price = e.Price,
-                    TotalValue = e.TotalValue
+                    CurrentPrice = e.CurrentPrice,
+                    TotalValue = e.TotalValue,
+                    PurchaseDate = e.PurchaseDate
                 });
 
                 return query.ToList();
@@ -61,7 +64,8 @@ namespace CryptoPortfolio.Services
                         CryptoName = query.CryptoName,
                         Amount = query.Amount,
                         Currency = query.Currency,
-                        Price = getCryptoPrice(query.CryptoName,query.Currency),
+                        PurchasePrice = query.PurchasePrice,
+                        CurrentPrice = getCryptoPrice(query.CryptoName,query.Currency),
                         TotalValue = getCryptoPrice(query.CryptoName,query.Currency)*query.Amount
                     };
             }
@@ -77,7 +81,9 @@ namespace CryptoPortfolio.Services
                 entity.Currency = model.Currency;
                 entity.Amount = model.Amount;
                 entity.PurchaseId = model.PurchaseId;
-                entity.Price = getCryptoPrice(model.CryptoName, model.Currency);
+                entity.PurchasePrice = model.PurchasePrice;
+                entity.PurchaseDate = model.PurchaseDate;
+                entity.CurrentPrice = getCryptoPrice(model.CryptoName, model.Currency);
                 entity.TotalValue = getCryptoPrice(model.CryptoName, model.Currency) * model.Amount;
 
                 return ctx.SaveChanges() == 1;

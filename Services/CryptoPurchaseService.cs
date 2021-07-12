@@ -11,10 +11,8 @@ namespace CryptoPortfolio.Services
         {
             var entity = new CryptoPurchase()
             {
-                Name = model.Name,
-                PurchaseAmount = model.PurchaseAmount,
-                PurchaseDate = model.PurchaseDate,
-                PurchasePrice = model.PurchasePrice
+                DateAdded = model.DateAdded,
+                PortfolioId = model.PortfolioId,
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -32,11 +30,8 @@ namespace CryptoPortfolio.Services
                 {
                     PurchaseId = e.PurchaseId,
                     PortfolioId = e.PortfolioId,
-                    Name = e.Name,
-                    PurchaseAmount = e.PurchaseAmount,
-                    PurchaseDate = e.PurchaseDate,
-                    PurchasePrice = e.PurchasePrice,
-                    CryptoInfo = e.CryptoInfo
+                    CryptoInfo = e.CryptoInfo,
+                    DateAdded = e.DateAdded,
                 });
                 return query.ToList();
             }
@@ -52,17 +47,18 @@ namespace CryptoPortfolio.Services
                     new CryptoPurchaseDetails
                     {
                         PurchaseId = query.PurchaseId,
-                        Name = query.Name,
-                        PurchaseDate = query.PurchaseDate,
-                        PurchaseAmount = query.PurchaseAmount,
-                        PurchasePrice = query.PurchasePrice,
                         PortfolioId = query.PortfolioId,
+                        PurchaseDate = query.DateAdded,
                         CryptoInfo = query.CryptoInfo.Select(e => new CryptoInfo()
                         {
                             CryptoId = e.CryptoId,
                             CryptoName = e.CryptoName,
                             Amount = e.Amount,
-                            Price = e.Price,
+                            CurrentPrice = e.CurrentPrice,
+                            PurchasePrice = e.PurchasePrice,
+                            Gain = e.Gain,
+                            GainPercent = e.GainPercent,
+                            PurchaseDate = e.PurchaseDate,
                             TotalValue = e.TotalValue
                         }).ToList()
                     };
@@ -78,10 +74,7 @@ namespace CryptoPortfolio.Services
                 var entity = ctx.Purchases.Single(e => e.PurchaseId == model.PurchaseId);
 
                 entity.PortfolioId = model.PortfolioId;
-                entity.Name = model.Name;
-                entity.PurchaseAmount = model.PurchaseAmount;
-                entity.PurchasePrice = model.PurchasePrice;
-                entity.PurchaseDate = model.PurchaseDate;
+                entity.DateAdded = model.DateAdded;
 
                 return ctx.SaveChanges() == 1;
             }

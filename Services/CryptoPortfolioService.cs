@@ -55,11 +55,7 @@ namespace CryptoPortfolio.Services
                         CryptoPurchase = entity.CryptoPurchase.Select(cp => new CryptoPurchase
                         {
                             PurchaseId = cp.PurchaseId,
-                            Name = cp.Name,
-                            Gain = cp.Gain,
-                            PurchaseAmount = cp.PurchaseAmount,
-                            PurchaseDate = cp.PurchaseDate,
-                            GainPercent = cp.GainPercent
+                            DateAdded = cp.DateAdded,
                         }).ToList()
                     };
             }

@@ -43,11 +43,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.CurrentPrice)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Price)
+            @Html.DisplayFor(model => model.CurrentPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchasePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchasePrice)
         </dd>
 
         <dt>
@@ -66,9 +74,33 @@
             @Html.DisplayFor(model => model.TotalValue)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GainPercent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GainPercent)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CryptoId}) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.CryptoId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

@@ -1,4 +1,5 @@
 ﻿using RestSharp;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -12,9 +13,11 @@ namespace CryptoPortfolio.Models
         public string Currency { get; set; }
         public string CryptoName { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public decimal Price {get; set;}
+        public decimal CurrentPrice {get; set;}
         public decimal Amount { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal TotalValue { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
+        public DateTimeOffset? PurchaseDate { get; set; }
     }
 }

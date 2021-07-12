@@ -19,22 +19,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PortfolioId)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PortfolioId)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.PurchasePrice)
         </dt>
 
@@ -58,46 +42,72 @@
             @Html.DisplayFor(model => model.PurchaseDate)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.PortfolioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PortfolioId)
+        </dd>
+
         <br />
 
-        @foreach (CryptoPortfolio.Data.CryptoInfo myCrypto in Model.CryptoInfo)
+        @foreach (CryptoPortfolio.Data.CryptoInfo cryptoInfo in Model.CryptoInfo)
         {
+
             <dt>
-                @Html.DisplayNameFor(modelItem => myCrypto.CryptoName)
+                @Html.DisplayNameFor(modelItem => cryptoInfo.CryptoName)
             </dt>
 
             <dd>
-                @Html.DisplayFor(modelItem => myCrypto.CryptoName)
+                @Html.DisplayFor(modelItem => cryptoInfo.CryptoName)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(modelItem => myCrypto.Price)
+                @Html.DisplayNameFor(modelItem => cryptoInfo.Amount)
             </dt>
 
             <dd>
-                @Html.DisplayFor(modelItem => myCrypto.Price)
+                @Html.DisplayFor(modelItem => cryptoInfo.Amount)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(modelItem => myCrypto.Amount)
+                @Html.DisplayNameFor(modelItem => cryptoInfo.CurrentPrice)
             </dt>
 
             <dd>
-                @Html.DisplayFor(modelItem => myCrypto.Amount)
+                @Html.DisplayFor(modelItem => cryptoInfo.CurrentPrice)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(modelItem => myCrypto.TotalValue)
+                @Html.DisplayNameFor(modelItem => cryptoInfo.TotalValue)
             </dt>
 
             <dd>
-                @Html.DisplayFor(modelItem => myCrypto.TotalValue)
+                @Html.DisplayFor(modelItem => cryptoInfo.TotalValue)
             </dd>
+
+            <dt>
+                @Html.DisplayNameFor(modelItem => cryptoInfo.Gain)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => cryptoInfo.Gain)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(modelItem => cryptoInfo.GainPercent)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => cryptoInfo.GainPercent)
+            </dd>
+
             <br />
         }
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.PurchaseId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
