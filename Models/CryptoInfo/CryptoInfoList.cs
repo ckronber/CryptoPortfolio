@@ -13,7 +13,7 @@ namespace CryptoPortfolio.Models
         public string Currency { get; set; }
         public string CryptoName { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public decimal CurrentPrice {get; set;}
+        public virtual decimal CurrentPrice {get; set;}
         public decimal Amount { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal TotalValue { get; set; }

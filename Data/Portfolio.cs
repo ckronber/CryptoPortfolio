@@ -14,8 +14,8 @@ namespace CryptoPortfolio.Data
         [ForeignKey("CryptoUser")]
         public int? CryptoUser_UserId { get; set; }
         public virtual CryptoUser CryptoUser { get; set; }
-        [ForeignKey("CryptoPurchase")]
-        public int?  PurchaseId {get;set;}
+        //[ForeignKey("CryptoPurchase")]
+        //public int?  PurchaseId {get;set;}
         public virtual List<CryptoPurchase> CryptoPurchase { get; set; }
     }
 }

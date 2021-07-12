@@ -56,8 +56,8 @@ namespace CryptoPortfolio.Services
                             Amount = e.Amount,
                             CurrentPrice = e.CurrentPrice,
                             PurchasePrice = e.PurchasePrice,
-                            Gain = e.Gain,
-                            GainPercent = e.GainPercent,
+                            //Gain = e.Gain,
+                            //GainPercent = e.GainPercent,
                             PurchaseDate = e.PurchaseDate,
                             TotalValue = e.TotalValue
                         }).ToList()

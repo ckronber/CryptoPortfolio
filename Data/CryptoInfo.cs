@@ -27,8 +27,9 @@ namespace CryptoPortfolio.Data
         public decimal Amount { get; set; }
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal TotalValue { get; set; }
-        public decimal? Gain { get; set; }
-        public decimal? GainPercent { get; set; }
+        public decimal? Gain => CurrentPrice / PurchasePrice;
+        public decimal? GainPercent  => Gain * 100;
+
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public DateTimeOffset? PurchaseDate { get; set; }
  
