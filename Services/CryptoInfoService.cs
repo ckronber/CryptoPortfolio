@@ -111,7 +111,25 @@ namespace CryptoPortfolio.Services
 
             CryptoRead readCrypto = JsonSerializer.Deserialize<CryptoRead>(response.Content);
 
-            return readCrypto.USD;
+            if (CurrencyTicker == "USD")
+                return readCrypto.USD;
+            if (CurrencyTicker == "JPY")
+                return readCrypto.JPY;
+            if (CurrencyTicker == "EUR")
+                return readCrypto.EUR;
+            if (CurrencyTicker == "CNY")
+                return readCrypto.CNY;
+            if (CurrencyTicker == "KRW")
+                return readCrypto.KRW;
+            if (CurrencyTicker == "INR")
+                return readCrypto.INR;
+            if (CurrencyTicker == "CAD")
+                return readCrypto.CAD;
+            if (CurrencyTicker == "HKD")
+                return readCrypto.HKD;
+            if (CurrencyTicker == "AUD")
+                return readCrypto.AUD;
+            else return 0;
         }
     }
 

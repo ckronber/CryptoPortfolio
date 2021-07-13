@@ -34,21 +34,25 @@ namespace CryptoPortfolio.Services
             }
         }
 
-        public IEnumerable<UserList> GetUsers()
+        public UserDetails GetCurrentUser()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.CryptoUsers.Select(e => new UserList
-                {
-                    UserId = e.UserId,
-                    FirstName = e.FirstName,
-                    LastName = e.LastName,
-                    Currency = e.Currency,
-                    TradeMoney = e.TradeMoney,
-                    PreferredExchange = e.PreferredExchange,
-                });
+               // var query = ctx.CryptoUsers.Select(e => new UserList
 
-                return query.ToArray();
+                var query = ctx.CryptoUsers.Single(e => e.LogId == _userId);
+
+                return
+                     new UserDetails
+                     {
+                         UserId = query.UserId,
+                         LogId = query.LogId,
+                         PreferredExchange = query.PreferredExchange,
+                         FirstName = query.FirstName,
+                         LastName = query.LastName,
+                         TradeMoney = query.TradeMoney,
+                         Currency = query.Currency
+                     };
             }
         }
 
