@@ -47,6 +47,7 @@ CryptoRead readCrypto = JsonSerializer.Deserialize<CryptoRead>(response.Content)
 ## Planning Documents
 
 <iframe width="560" height="315" src='https://dbdiagram.io/embed/60ede4994ed9be1c05cb4619'> </iframe>
+
  - [Db Diagram](https://dbdiagram.io/d/60ede4994ed9be1c05cb4619)
  - [Planning Google Docs Document](https://docs.google.com/document/d/1yWl6uiD4cFZYBNSpcVk9DFET8Ghd718Bl_GFlchiYxk/edit?usp=sharing)
  - [Trello Board](https://trello.com/b/8xELOVls/cryptocurrency-portfolio)
