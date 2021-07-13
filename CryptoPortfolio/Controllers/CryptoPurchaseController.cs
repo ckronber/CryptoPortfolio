@@ -69,7 +69,6 @@ namespace CryptoPortfolio.Controllers
                 {
                     PortfolioId = detail.PortfolioId,
                     PurchaseId = detail.PurchaseId,
-                    DateAdded = detail.DateAdded
                 };
             return View(model);
         }

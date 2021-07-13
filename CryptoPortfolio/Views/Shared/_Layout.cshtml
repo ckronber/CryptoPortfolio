@@ -34,9 +34,9 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Crypto Info", "Index", "CryptoInfo")</li>
                         <li>@Html.ActionLink("Crypto Portfolio", "Index", "CryptoPortfolio")</li>
-                        <li>@Html.ActionLink("Purchase Crypto", "Index", "CryptoPurchase")</li>
+                        <li>@Html.ActionLink("Crypto Purchase", "Index", "CryptoPurchase")</li>
+                        <li>@Html.ActionLink("Crypto Info", "Index", "CryptoInfo")</li>
                         <li>@Html.ActionLink("UserInfo", "Index", "User")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>

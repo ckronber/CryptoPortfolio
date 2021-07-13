@@ -90,55 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptoInfo.cs" />
-    <Compile Include="Migrations\202107111753302_secondMigration.cs" />
-    <Compile Include="Migrations\202107111753302_secondMigration.designer.cs">
-      <DependentUpon>202107111753302_secondMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107120759096_ThirdMigration.cs" />
-    <Compile Include="Migrations\202107120759096_ThirdMigration.designer.cs">
-      <DependentUpon>202107120759096_ThirdMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107120820361_FourthMigration.cs" />
-    <Compile Include="Migrations\202107120820361_FourthMigration.designer.cs">
-      <DependentUpon>202107120820361_FourthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107121351592_FifthMigration.cs" />
-    <Compile Include="Migrations\202107121351592_FifthMigration.designer.cs">
-      <DependentUpon>202107121351592_FifthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107121406438_SixthMigration.cs" />
-    <Compile Include="Migrations\202107121406438_SixthMigration.designer.cs">
-      <DependentUpon>202107121406438_SixthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107121637030_SeventhMigration.cs" />
-    <Compile Include="Migrations\202107121637030_SeventhMigration.designer.cs">
-      <DependentUpon>202107121637030_SeventhMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107121653458_SeventhMigration1.cs" />
-    <Compile Include="Migrations\202107121653458_SeventhMigration1.designer.cs">
-      <DependentUpon>202107121653458_SeventhMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107121658588_EighthMigration.cs" />
-    <Compile Include="Migrations\202107121658588_EighthMigration.designer.cs">
-      <DependentUpon>202107121658588_EighthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107121719320_NinthMigration.cs" />
-    <Compile Include="Migrations\202107121719320_NinthMigration.designer.cs">
-      <DependentUpon>202107121719320_NinthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107121755050_TenthMigration.cs" />
-    <Compile Include="Migrations\202107121755050_TenthMigration.designer.cs">
-      <DependentUpon>202107121755050_TenthMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107122353417_MigrationEleven.cs" />
-    <Compile Include="Migrations\202107122353417_MigrationEleven.designer.cs">
-      <DependentUpon>202107122353417_MigrationEleven.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107130026269_MigrationTwelve.cs" />
-    <Compile Include="Migrations\202107130026269_MigrationTwelve.designer.cs">
-      <DependentUpon>202107130026269_MigrationTwelve.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Portfolio.cs" />
     <Compile Include="CryptoPurchase.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -148,44 +99,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107111753302_secondMigration.resx">
-      <DependentUpon>202107111753302_secondMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107120759096_ThirdMigration.resx">
-      <DependentUpon>202107120759096_ThirdMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107120820361_FourthMigration.resx">
-      <DependentUpon>202107120820361_FourthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107121351592_FifthMigration.resx">
-      <DependentUpon>202107121351592_FifthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107121406438_SixthMigration.resx">
-      <DependentUpon>202107121406438_SixthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107121637030_SeventhMigration.resx">
-      <DependentUpon>202107121637030_SeventhMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107121653458_SeventhMigration1.resx">
-      <DependentUpon>202107121653458_SeventhMigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107121658588_EighthMigration.resx">
-      <DependentUpon>202107121658588_EighthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107121719320_NinthMigration.resx">
-      <DependentUpon>202107121719320_NinthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107121755050_TenthMigration.resx">
-      <DependentUpon>202107121755050_TenthMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107122353417_MigrationEleven.resx">
-      <DependentUpon>202107122353417_MigrationEleven.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107130026269_MigrationTwelve.resx">
-      <DependentUpon>202107130026269_MigrationTwelve.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

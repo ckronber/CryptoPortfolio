@@ -1,5 +1,6 @@
 ﻿using CryptoPortfolio.Data;
 using CryptoPortfolio.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,7 +12,7 @@ namespace CryptoPortfolio.Services
         {
             var entity = new CryptoPurchase()
             {
-                DateAdded = model.DateAdded,
+                DateAdded = DateTimeOffset.Now,
                 PortfolioId = model.PortfolioId,
             };
 
@@ -72,7 +73,6 @@ namespace CryptoPortfolio.Services
                 var entity = ctx.Purchases.Single(e => e.PurchaseId == model.PurchaseId);
 
                 entity.PortfolioId = model.PortfolioId;
-                entity.DateAdded = model.DateAdded;
 
                 return ctx.SaveChanges() == 1;
             }
