@@ -24,7 +24,7 @@ CryptoRead readCrypto = JsonSerializer.Deserialize<CryptoRead>(response.Content)
 ```
 ## CryptoCompare API Reference
 
-#### Get all items
+#### Get Single CryptoCurrency
 
 ```http
   GET https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD
