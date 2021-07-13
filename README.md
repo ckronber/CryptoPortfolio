@@ -4,6 +4,15 @@ CryptoPurchase is a WebMVC where you can add all of your crypto purchases and ha
 
 [Crypto Portfolio](https://cryptoportfoliowebmvc.azurewebsites.net)
 
+## Steps to Add CryptoCurrencies to a Portfolio
+1. Register as a new user
+2. Once you  have registered with an email, you will be directed towared the user information page
+3. After you have entered this information you will be directed to the home page.
+4. First add a Portfolio
+5. Next add a Purchase with the portfolio Id
+6. Next add cryptocurrencies to the purchsase created previously and add as many cryptocurrencies in this purchase
+7. Now you can view the currencies in Purchase details and CrypotoInfoList and details
+
 ## Screenshots
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
