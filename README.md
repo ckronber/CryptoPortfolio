@@ -52,4 +52,4 @@ CryptoRead readCrypto = JsonSerializer.Deserialize<CryptoRead>(response.Content)
   
 ## Authors
 
-- [@ChrisKronberg](https://www.github.com/ckronber)
+[@ChrisKronberg](https://www.github.com/ckronber)
