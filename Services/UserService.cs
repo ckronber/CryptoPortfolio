@@ -84,6 +84,7 @@ namespace CryptoPortfolio.Services
 
                 entity.UserId = model.UserId;
                 entity.PreferredExchange = model.PreferredExchange;
+                entity.Currency = model.Currency;
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.TradeMoney = model.TradeMoney;
