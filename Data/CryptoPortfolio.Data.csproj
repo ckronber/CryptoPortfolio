@@ -130,6 +130,14 @@
     <Compile Include="Migrations\202107121755050_TenthMigration.designer.cs">
       <DependentUpon>202107121755050_TenthMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107122353417_MigrationEleven.cs" />
+    <Compile Include="Migrations\202107122353417_MigrationEleven.designer.cs">
+      <DependentUpon>202107122353417_MigrationEleven.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107130026269_MigrationTwelve.cs" />
+    <Compile Include="Migrations\202107130026269_MigrationTwelve.designer.cs">
+      <DependentUpon>202107130026269_MigrationTwelve.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Portfolio.cs" />
     <Compile Include="CryptoPurchase.cs" />
@@ -171,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107121755050_TenthMigration.resx">
       <DependentUpon>202107121755050_TenthMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107122353417_MigrationEleven.resx">
+      <DependentUpon>202107122353417_MigrationEleven.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107130026269_MigrationTwelve.resx">
+      <DependentUpon>202107130026269_MigrationTwelve.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

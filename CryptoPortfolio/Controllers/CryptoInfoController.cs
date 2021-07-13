@@ -17,7 +17,6 @@ namespace CryptoPortfolio.Controllers
         // GET: Create
         public ActionResult Create()
         {
-            
            // List<string> Value = new List<string>
             //Value.Add()
             return View();

@@ -12,6 +12,5 @@ namespace CryptoPortfolio.Models
         public string Name { get; set; }
         public string BullBear { get; set; }
         public int? CryptoUser_UserId { get; set; }
-   
     }
 }

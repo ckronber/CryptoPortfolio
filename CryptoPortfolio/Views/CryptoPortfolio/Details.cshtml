@@ -37,7 +37,7 @@
 
     <h5>CryptoUser Information</h5>
     <hr />
-    <dl>
+    <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.CryptoUser.FirstName)
         </dt>
@@ -72,9 +72,11 @@
 
     <h5>CryptoPurchase Information</h5>
     <hr />
-    <dl>
-        @foreach (CryptoPortfolio.Data.CryptoPurchase myPurchase in Model.CryptoPurchase)
-        {
+
+    @foreach (CryptoPortfolio.Data.CryptoPurchase myPurchase in Model.CryptoPurchase)
+    {
+        <br />
+        <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => myPurchase.PurchaseId)
             </dt>
@@ -96,14 +98,15 @@
             <dd>
                 @Html.DisplayFor(model => myPurchase.TotalCryptoValue)
             </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => myPurchase.CryptoInfo)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => myPurchase.CryptoInfo)
-            </dd>
-        }
+        </dl>
+    }
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPortfolioValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalPortfolioValue)
+        </dd>
 
     </dl>
 </div>

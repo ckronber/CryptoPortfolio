@@ -25,20 +25,15 @@
         <dd>
             @Html.DisplayFor(model => model.PortfolioId)
         </dd>
+    </dl>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CryptoInfo)
-        </dt>
+    <br />
 
-        <dd>
-            @Html.DisplayFor(model => model.CryptoInfo)
-        </dd>
 
+    @foreach (CryptoPortfolio.Data.CryptoInfo cryptoInfo in Model.CryptoInfo)
+    {
         <br />
-
-        @foreach (CryptoPortfolio.Data.CryptoInfo cryptoInfo in Model.CryptoInfo)
-        {
-
+        <dl>
             <dt>
                 @Html.DisplayNameFor(modelItem => cryptoInfo.CryptoName)
             </dt>
@@ -85,10 +80,12 @@
             <dd>
                 @Html.DisplayFor(modelItem => cryptoInfo.GainPercent)
             </dd>
+        </dl>
+    }
 
-            <br />
-        }
+    <br />
 
+    <dl>
         <dt>
             @Html.DisplayNameFor(model => model.TotalCryptoValue)
         </dt>
@@ -96,8 +93,8 @@
         <dd>
             @Html.DisplayFor(model => model.TotalCryptoValue)
         </dd>
-
     </dl>
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.PurchaseId }) |
