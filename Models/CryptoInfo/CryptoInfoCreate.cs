@@ -6,6 +6,7 @@ namespace CryptoPortfolio.Models
 {
     public class CryptoInfoCreate
     {
+        [Range(1,int.MaxValue)]
         public int? PurchaseId { get; set; }
         [Required]
         [StringLength(3, ErrorMessage = "The Fiat Currency Ticker value cannot exceed 3 characters.")]

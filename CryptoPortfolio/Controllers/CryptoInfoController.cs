@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace CryptoPortfolio.Controllers
 {
+    [Authorize]
     public class CryptoInfoController : Controller
     {
         // GET: CryptoInfo

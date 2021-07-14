@@ -56,8 +56,10 @@ namespace CryptoPortfolio.Services
                         {
                             PurchaseId = cp.PurchaseId,
                             DateAdded = cp.DateAdded,
-                            TotalCryptoValue = cp.getTotalCryptoValue()
+                            TotalCryptoValue = cp.getTotalCryptoValue(),
                         }).ToList()
+
+                        
                     };
             }
         }

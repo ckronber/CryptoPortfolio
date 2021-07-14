@@ -28,9 +28,8 @@
         @Html.LabelFor(model => model.Currency, htmlAttributes: new { @class = "control-label col-md-2" })
        
         <div class="col-md-10">
-            @*<label for="Currency"></label>*@
             <select name="Currency" id="model.Currency" class="form-control">
-                <option selected="selected">USD</option>
+                <option>USD</option>
                 <option>JPY</option>
                 <option>EUR</option>
                 <option>CNY</option>
@@ -40,7 +39,6 @@
                 <option>HKD</option>
                 <option>AUD</option>
             </select>
-            @*@Html.EditorFor(model => model.Currency, new { htmlAttributes = new { @class = "form-control" } })*@
             @Html.ValidationMessageFor(model => model.Currency, "", new { @class = "text-danger" })
         </div>
     </div>

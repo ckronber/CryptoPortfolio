@@ -8,7 +8,7 @@ namespace CryptoPortfolio.Models
     public class CryptoPurchaseCreate
     {
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
-        public DateTimeOffset DateAdded  => DateTimeOffset.Now;
+        public DateTimeOffset DateAdded { get; set; }
         public int? PortfolioId { get; set; }
     }
 }
