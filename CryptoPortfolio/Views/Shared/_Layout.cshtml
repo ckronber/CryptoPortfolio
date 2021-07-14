@@ -3,9 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Crypto Portfolio Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        body{
+            background-color:sandybrown;
+        }
+        div.navbar{
+            background-color:darkslategrey;
+        }
+    </style>
 
 </head>
 <body>
@@ -17,16 +26,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Crypto Portfolio Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Crypto Info", "Index", "CryptoInfo")</li>
+                 
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Crypto Portfolio", "Index", "CryptoPortfolio")</li>
-                        <li>@Html.ActionLink("Purchase Crypto", "Index", "CryptoPurchase")</li>
+                        <li>@Html.ActionLink("Crypto Purchase", "Index", "CryptoPurchase")</li>
+                        <li>@Html.ActionLink("Crypto Info", "Index", "CryptoInfo")</li>
                         <li>@Html.ActionLink("UserInfo", "Index", "User")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
@@ -40,7 +49,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Crypto Portfolio</p>
+            <p>&copy;@DateTime.Now.Year - CK Crypto Portfolio</p>
         </footer>
     </div>
 

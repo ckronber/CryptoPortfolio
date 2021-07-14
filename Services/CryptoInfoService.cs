@@ -18,7 +18,9 @@ namespace CryptoPortfolio.Services
                 Currency = model.Currency,
                 PurchaseId = model.PurchaseId,
                 Amount = model.Amount,
-                Price = getCryptoPrice(model.CryptoName,model.Currency)
+                PurchasePrice = model.PurchasePrice,
+                CurrentPrice = getCryptoPrice(model.CryptoName,model.Currency),
+                TotalValue = getCryptoPrice(model.CryptoName, model.Currency)*model.Amount
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -37,7 +39,9 @@ namespace CryptoPortfolio.Services
                     CryptoId = e.CryptoId,
                     CryptoName = e.CryptoName,
                     Currency = e.Currency,
-                    Amount = e.Amount
+                    Amount = e.Amount,
+                    CurrentPrice = e.CurrentPrice,
+                    TotalValue = e.TotalValue,
                 });
 
                 return query.ToList();
@@ -53,10 +57,14 @@ namespace CryptoPortfolio.Services
                 return
                     new CryptoInfoDetails
                     {
+                        PurchaseId = query.PurchaseId,
                         CryptoId = query.CryptoId,
                         CryptoName = query.CryptoName,
                         Amount = query.Amount,
                         Currency = query.Currency,
+                        PurchasePrice = query.PurchasePrice,
+                        CurrentPrice = getCryptoPrice(query.CryptoName,query.Currency),
+                        TotalValue = getCryptoPrice(query.CryptoName,query.Currency)*query.Amount
                     };
             }
         }
@@ -71,7 +79,9 @@ namespace CryptoPortfolio.Services
                 entity.Currency = model.Currency;
                 entity.Amount = model.Amount;
                 entity.PurchaseId = model.PurchaseId;
-                entity.Price = getCryptoPrice(model.CryptoName, model.Currency);
+                entity.PurchasePrice = model.PurchasePrice;
+                entity.CurrentPrice = getCryptoPrice(model.CryptoName, model.Currency);
+                entity.TotalValue = getCryptoPrice(model.CryptoName, model.Currency) * model.Amount;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -101,7 +111,25 @@ namespace CryptoPortfolio.Services
 
             CryptoRead readCrypto = JsonSerializer.Deserialize<CryptoRead>(response.Content);
 
-            return readCrypto.USD;
+            if (CurrencyTicker == "USD")
+                return readCrypto.USD;
+            if (CurrencyTicker == "JPY")
+                return readCrypto.JPY;
+            if (CurrencyTicker == "EUR")
+                return readCrypto.EUR;
+            if (CurrencyTicker == "CNY")
+                return readCrypto.CNY;
+            if (CurrencyTicker == "KRW")
+                return readCrypto.KRW;
+            if (CurrencyTicker == "INR")
+                return readCrypto.INR;
+            if (CurrencyTicker == "CAD")
+                return readCrypto.CAD;
+            if (CurrencyTicker == "HKD")
+                return readCrypto.HKD;
+            if (CurrencyTicker == "AUD")
+                return readCrypto.AUD;
+            else return 0;
         }
     }
 

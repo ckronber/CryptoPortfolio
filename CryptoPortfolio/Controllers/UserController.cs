@@ -16,7 +16,7 @@ namespace CryptoPortfolio.Controllers
         public ActionResult Index()
         {
             var service = CreateUser();
-            var model = service.GetUsers();
+            var model = new List<UserDetails> {service.GetCurrentUser()};
             return View(model);
         }
 
@@ -65,7 +65,6 @@ namespace CryptoPortfolio.Controllers
                 {
                    UserId = detail.UserId,
                    PreferredExchange = detail.PreferredExchange,
-                   Email = detail.Email,
                    TradeMoney = detail.TradeMoney,
                    Currency = detail.Currency,
                    FirstName = detail.FirstName,

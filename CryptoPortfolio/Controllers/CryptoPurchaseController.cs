@@ -1,12 +1,15 @@
-﻿using CryptoPortfolio.Models;
+﻿using CryptoPortfolio.Data;
+using CryptoPortfolio.Models;
 using CryptoPortfolio.Services;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace CryptoPortfolio.Controllers
-{
+{ 
     [Authorize]
     public class CryptoPurchaseController : Controller
     {
+        //private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: CryptoPurchase
         public ActionResult Index()
         {
@@ -17,6 +20,10 @@ namespace CryptoPortfolio.Controllers
         // GET: Create
         public ActionResult Create()
         {
+            //CryptoPurchaseCreate model = new CryptoPurchaseCreate();
+            //var portfolios = _db.Portfolios.ToList();
+           // model.Portfolios = new SelectList(_db.Portfolios, "PortfolioId", "Name");
+
             return View();
         }
 
@@ -25,7 +32,7 @@ namespace CryptoPortfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CryptoPurchaseCreate model)
         {
-            if (!ModelState.IsValid)
+            if(!ModelState.IsValid)
                 return View(model);
 
             var service = CreateCryptoPurchase();
@@ -57,11 +64,8 @@ namespace CryptoPortfolio.Controllers
             var model =
                 new CryptoPurchaseEdit()
                 {
+                    PortfolioId = detail.PortfolioId,
                     PurchaseId = detail.PurchaseId,
-                    PurchaseDate = detail.PurchaseDate,
-                    PurchasePrice = detail.PurchasePrice,
-                    PurchaseAmount = detail.PurchaseAmount,
-                    Name = detail.Name
                 };
             return View(model);
         }

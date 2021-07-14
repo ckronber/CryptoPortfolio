@@ -12,12 +12,10 @@ namespace CryptoPortfolio.Models
     public class CryptoPurchaseList
     {
         public int PurchaseId { get; set; }
-        public string Name { get; set; }
-        [DisplayFormat(DataFormatString = "{0:C}")]
-        public decimal PurchasePrice { get; set; }
-        public decimal PurchaseAmount { get; set; }
+        public decimal TotalCryptoValue { get; set; }
+
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
-        public DateTimeOffset PurchaseDate { get; set; }
+        public DateTimeOffset DateAdded { get; set; }
         public int? PortfolioId { get; set; }
         public virtual Portfolio Portfolio { get; set; }
         public virtual List<CryptoInfo> CryptoInfo { get; set; }

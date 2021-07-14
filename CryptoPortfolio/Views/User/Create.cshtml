@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>5
+<h2 class="">Create</h2>
 
 @using (Html.BeginForm())
 {
@@ -32,14 +32,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.TradeMoney, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TradeMoney, new { htmlAttributes = new { @class = "form-control" } })
@@ -50,7 +42,17 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Currency, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Currency, new { htmlAttributes = new { @class = "form-control" } })
+                <select name="Currency" id="model.Currency" class="form-control">
+                    <option>USD</option>
+                    <option>JPY</option>
+                    <option>EUR</option>
+                    <option>CNY</option>
+                    <option>KRW</option>
+                    <option>INR</option>
+                    <option>CAD</option>
+                    <option>HKD</option>
+                    <option>AUD</option>
+                </select>
                 @Html.ValidationMessageFor(model => model.Currency, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -58,7 +60,23 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PreferredExchange, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PreferredExchange, new { htmlAttributes = new { @class = "form-control" } })
+                <select name="PreferredExchange" id="model.PreferredExchange" class="form-control">
+                    <option>Binance</option>
+                    <option>Huobi</option>
+                    <option>Coinbase</option>
+                    <option>PrimeXBT</option>
+                    <option>Coinsmart</option>
+                    <option>Gemini</option>
+                    <option>Coinmama</option>
+                    <option>Changelly</option>
+                    <option>Poloniex</option>
+                    <option>Paybis</option>
+                    <option>Overbit</option>
+                    <option>Club Swan</option>
+                    <option>KuCoin</option>
+                    <option>Switchere</option>
+                    <option>BitHash</option>
+                </select>
                 @Html.ValidationMessageFor(model => model.PreferredExchange, "", new { @class = "text-danger" })
             </div>
         </div>

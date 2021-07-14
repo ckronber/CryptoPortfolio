@@ -13,7 +13,7 @@ namespace CryptoPortfolio.Services
             {
                 Name = model.Name,
                 BullBear = model.BullBear,
-                CryptoUser_UserId = 1,
+                CryptoUser_UserId = model.CryptoUser_UserId,
             };
 
             using(var ctx = new ApplicationDbContext())
@@ -52,14 +52,15 @@ namespace CryptoPortfolio.Services
                         Name = entity.Name,
                         BullBear = entity.BullBear,
                         CryptoUser = entity.CryptoUser,
+                        CryptoUser_UserId = entity.CryptoUser_UserId,
                         CryptoPurchase = entity.CryptoPurchase.Select(cp => new CryptoPurchase
                         {
-                            Name = cp.Name,
-                            Gain = cp.Gain,
-                            PurchaseAmount = cp.PurchaseAmount,
-                            PurchaseDate = cp.PurchaseDate,
-                            GainPercent = cp.GainPercent
+                            PurchaseId = cp.PurchaseId,
+                            DateAdded = cp.DateAdded,
+                            TotalCryptoValue = cp.getTotalCryptoValue(),
                         }).ToList()
+
+                        
                     };
             }
         }
@@ -72,6 +73,7 @@ namespace CryptoPortfolio.Services
 
                 entity.Name = model.Name;
                 entity.BullBear = model.BullBear;
+                entity.CryptoUser_UserId = model.CryptoUser_UserId;
 
                 return ctx.SaveChanges() == 1;
             }

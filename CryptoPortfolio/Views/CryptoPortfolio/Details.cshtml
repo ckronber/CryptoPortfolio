@@ -37,7 +37,7 @@
 
     <h5>CryptoUser Information</h5>
     <hr />
-    <dl>
+    <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.CryptoUser.FirstName)
         </dt>
@@ -54,13 +54,6 @@
             @Html.DisplayFor(model => model.CryptoUser.LastName)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CryptoUser.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CryptoUser.Email)
-        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.CryptoUser.TradeMoney)
         </dt>
@@ -79,17 +72,46 @@
 
     <h5>CryptoPurchase Information</h5>
     <hr />
+
+    @foreach (CryptoPortfolio.Data.CryptoPurchase myPurchase in Model.CryptoPurchase)
+    {
+        <br />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => myPurchase.PurchaseId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => myPurchase.PurchaseId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => myPurchase.DateAdded)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => myPurchase.DateAdded)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => myPurchase.TotalCryptoValue)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => myPurchase.TotalCryptoValue)
+            </dd>
+        </dl>
+    }
+
     <dl>
         <dt>
-            @Html.DisplayNameFor(model => model.CryptoPurchase)
+            @Html.DisplayNameFor(model => model.TotalPortfolioValue)
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.CryptoPurchase)
+            @Html.DisplayFor(model => model.TotalPortfolioValue)
         </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {id = Model.PortfolioId}) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PortfolioId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

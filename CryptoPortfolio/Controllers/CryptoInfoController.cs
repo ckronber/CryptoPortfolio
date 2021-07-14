@@ -1,9 +1,11 @@
 ﻿using CryptoPortfolio.Models;
 using CryptoPortfolio.Services;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace CryptoPortfolio.Controllers
 {
+    [Authorize]
     public class CryptoInfoController : Controller
     {
         // GET: CryptoInfo
@@ -16,6 +18,8 @@ namespace CryptoPortfolio.Controllers
         // GET: Create
         public ActionResult Create()
         {
+           // List<string> Value = new List<string>
+            //Value.Add()
             return View();
         }
 
@@ -59,9 +63,9 @@ namespace CryptoPortfolio.Controllers
                     CryptoId = detail.CryptoId,
                     CryptoName = detail.CryptoName,
                     Amount = detail.Amount,
-                    Price = detail.Price,
+                    PurchasePrice = detail.PurchasePrice,
                     PurchaseId = detail.PurchaseId,
-                    Currency = detail.Currency
+                    Currency = detail.Currency,
                 };
             return View(model);
         }

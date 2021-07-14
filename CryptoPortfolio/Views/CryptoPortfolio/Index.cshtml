@@ -26,9 +26,7 @@
         <th>
             @Html.DisplayNameFor(model => model.CryptoUser.LastName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CryptoUser.Email)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -48,9 +46,6 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.CryptoUser.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CryptoUser.Email)
     </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.PortfolioId }) |

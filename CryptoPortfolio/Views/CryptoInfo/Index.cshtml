@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.Amount)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.CurrentPrice)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TotalValue)
@@ -32,32 +32,34 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.CryptoId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Currency)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CryptoName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Amount)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Price)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.TotalValue)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.CryptoId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.CryptoId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.CryptoId })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CryptoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Currency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CryptoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalValue)
+            </td>
+      
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CryptoId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CryptoId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CryptoId })
+            </td>
+        </tr>
+    }
 
 </table>

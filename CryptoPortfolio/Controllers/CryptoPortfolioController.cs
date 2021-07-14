@@ -59,6 +59,7 @@ namespace CryptoPortfolio.Controllers
                 new CryptoPortfolioEdit()
                 {
                     PortfolioId = detail.PortfolioId,
+                    CryptoUser_UserId = detail.CryptoUser_UserId,
                     Name = detail.Name,
                     BullBear = detail.BullBear,
                 };

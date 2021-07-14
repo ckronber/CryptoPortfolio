@@ -215,6 +215,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\CryptoPortfolioWebMVC - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -348,19 +349,19 @@
     <Content Include="Views\User\Delete.cshtml" />
     <Content Include="Views\CryptoInfo\Index.cshtml" />
     <Content Include="Views\CryptoInfo\Create.cshtml" />
-    <Content Include="Views\CryptoInfo\Details.cshtml" />
-    <Content Include="Views\CryptoInfo\Edit.cshtml" />
-    <Content Include="Views\CryptoInfo\Delete.cshtml" />
     <Content Include="Views\CryptoPortfolio\Index.cshtml" />
     <Content Include="Views\CryptoPortfolio\Create.cshtml" />
     <Content Include="Views\CryptoPortfolio\Details.cshtml" />
     <Content Include="Views\CryptoPortfolio\Edit.cshtml" />
     <Content Include="Views\CryptoPortfolio\Delete.cshtml" />
+    <Content Include="Views\CryptoInfo\Delete.cshtml" />
+    <Content Include="Views\CryptoInfo\Edit.cshtml" />
+    <Content Include="Views\CryptoInfo\Details.cshtml" />
     <Content Include="Views\CryptoPurchase\Index.cshtml" />
     <Content Include="Views\CryptoPurchase\Create.cshtml" />
+    <Content Include="Views\CryptoPurchase\Details.cshtml" />
     <Content Include="Views\CryptoPurchase\Edit.cshtml" />
     <Content Include="Views\CryptoPurchase\Delete.cshtml" />
-    <Content Include="Views\CryptoPurchase\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

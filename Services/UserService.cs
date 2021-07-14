@@ -23,7 +23,6 @@ namespace CryptoPortfolio.Services
                 PreferredExchange = model.PreferredExchange,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                Email = model.Email,
                 TradeMoney = model.TradeMoney,
                 Currency = model.Currency
             };
@@ -35,20 +34,25 @@ namespace CryptoPortfolio.Services
             }
         }
 
-        public IEnumerable<UserList> GetUsers()
+        public UserDetails GetCurrentUser()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.CryptoUsers.Select(e => new UserList
-                {
-                    UserId = e.UserId,
-                    Email = e.Email,
-                    Currency = e.Currency,
-                    TradeMoney = e.TradeMoney,
-                    PreferredExchange = e.PreferredExchange,
-                });
+               // var query = ctx.CryptoUsers.Select(e => new UserList
 
-                return query.ToArray();
+                var query = ctx.CryptoUsers.Single(e => e.LogId == _userId);
+
+                return
+                     new UserDetails
+                     {
+                         UserId = query.UserId,
+                         LogId = query.LogId,
+                         PreferredExchange = query.PreferredExchange,
+                         FirstName = query.FirstName,
+                         LastName = query.LastName,
+                         TradeMoney = query.TradeMoney,
+                         Currency = query.Currency
+                     };
             }
         }
 
@@ -66,7 +70,6 @@ namespace CryptoPortfolio.Services
                         PreferredExchange = query.PreferredExchange,
                         FirstName = query.FirstName,
                         LastName = query.LastName,
-                        Email = query.Email,
                         TradeMoney = query.TradeMoney,
                         Currency = query.Currency
                     };
@@ -81,6 +84,7 @@ namespace CryptoPortfolio.Services
 
                 entity.UserId = model.UserId;
                 entity.PreferredExchange = model.PreferredExchange;
+                entity.Currency = model.Currency;
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.TradeMoney = model.TradeMoney;
