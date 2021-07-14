@@ -54,7 +54,6 @@ CryptoRead readCrypto = JsonSerializer.Deserialize<CryptoRead>(response.Content)
 
 - Make sure to know everything about Entity Framework
 - Postman is great to use for incorporating other Apis
-- Projects usually take more time than you think they will
 
   
 ## Planning Documents
