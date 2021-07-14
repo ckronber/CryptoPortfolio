@@ -52,6 +52,7 @@ namespace CryptoPortfolio.Services
                         Name = entity.Name,
                         BullBear = entity.BullBear,
                         CryptoUser = entity.CryptoUser,
+                        CryptoUser_UserId = entity.CryptoUser_UserId,
                         CryptoPurchase = entity.CryptoPurchase.Select(cp => new CryptoPurchase
                         {
                             PurchaseId = cp.PurchaseId,

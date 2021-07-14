@@ -11,6 +11,7 @@ namespace CryptoPortfolio.Data
         public int PortfolioId { get; set; }
         public string Name { get; set; }
         public string BullBear { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:C}")]
 
         public decimal TotalPortfolioValue {
@@ -27,7 +28,7 @@ namespace CryptoPortfolio.Data
         }
 
         [ForeignKey("CryptoUser")]
-        public int? CryptoUser_UserId { get; set; }
+        public int CryptoUser_UserId { get; set; }
         public virtual CryptoUser CryptoUser { get; set; }
 
         [ForeignKey("CryptoPurchase")]
