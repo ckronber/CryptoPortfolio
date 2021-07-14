@@ -14,8 +14,11 @@ CryptoPurchase is a WebMVC where you can add all of your crypto purchases and ha
 7. Now you can view the currencies in Purchase details and CrypotoInfoList and details
 
 ## Screenshots
+![homePage](home.png)
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![CryptoInfo](CryptoInfoGetAll.png)
+
+![Crypto Portfolio](CryptoPortfolioDetails.png)
 
   
 ## Api Example with Json Deserialization
